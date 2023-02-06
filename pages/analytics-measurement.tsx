@@ -36,35 +36,44 @@ const GoogleAnalytics: NextPage<Props> = () => {
   ];
 
   return (
-    <div>
-      <h1>This 9 Step Framework Will Help Your Website Achieve Peak Performance</h1>
-      <div className="story-section">
-        <img src="analytics-mountain4.png" alt="Google Analytics" width="700"/>
-        <h2>Unlock the power of your data with Google Analytics</h2>
-        <p>Are you tired of guessing how visitors interact with your website? Want to turn data into insights and turn insights into action? Look no further than Google Analytics. Our powerful and easy-to-use platform gives you the information you need to make data-driven decisions and improve your online presence. From understanding your audience to tracking your ROI, Google Analytics has you covered.</p>
-        <button onClick={() => router.push('/ga')}>Learn more</button>
+    <div className="text-secondary">
+      <div className="text-secondary bg-cover bg-center bg-no-repeat" style={{ 
+        backgroundImage: `url(${'analytics-hero.png'})`,
+        height: '120vh'
+      }} >
+        <div className="flex flex-col h-full justify-center items-center p-10 bg-black opacity-50 rounded-lg">
+          <h1 className="text-4xl font-bold text-center">This 9 Step Framework Will Help Your Website Achieve Peak Performance</h1>
+          <h2 className="text-xl font-semibold text-center">Unlock the power of your data with Google Analytics</h2>
+          <p className="text-lg text-center mt-5">Are you tired of guessing how visitors interact with your website? Want to turn data into insights and turn insights into action? Look no further than Google Analytics. Our powerful and easy-to-use platform gives you the information you need to make data-driven decisions and improve your online presence. From understanding your audience to tracking your ROI, Google Analytics has you covered.</p>
+          <button onClick={() => router.push('/ga')} className="bg-secondary text-black px-10 py-3 mt-10">Learn more</button>
+        </div>
       </div>
 
-      <div className="testimonials-section">
-        <h3>What our customers are saying</h3>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="testimonial">
-            <p>&quot;{testimonial.text}&quot;</p>
-            <p className="testimonial-author">- {testimonial.name}</p>
-          </div>
-        ))}
+      <div className="testimonials-section bg-primary p-10">
+        <h3 className="text-center text-2xl p-2">What our customers are saying</h3>
+        <div className="grid grid-cols-3 gap-4">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="p-4 bg-accent rounded-lg shadow">
+              <p className="font-medium">"{testimonial.text}"</p>
+              <p className="text-sm text-gray-600">- {testimonial.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
+      <form onSubmit={handleSubmit} className="bg-cultured p-10 rounded-lg shadow-lg">
+        <div className="mb-5">
+          <label className="block text-gray-700 font-medium mb-2">
+            Email:
+          </label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="border border-gray-400 p-2 w-full"
           />
-        </label>
-        <button type="submit">Sign up</button>
+        </div>
+        <button type="submit" className="bg-accent text-primary py-2 px-4 rounded-full">Sign up</button>
       </form>
     </div>
   );

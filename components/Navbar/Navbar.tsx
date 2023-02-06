@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Navbar: React.FC = () => {
     return (
-    <nav className="flex items-center justify-between p-6 bg-gray-700 text-white">
+    <nav className="flex items-center justify-between p-5 bg-primary text-secondary h-50">
         <div className="flex-grow-0 w-100">
             <Link href="/">
                 <img src="keys.svg" alt="logo" className="w-100" />
