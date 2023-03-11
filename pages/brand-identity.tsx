@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar/Navbar'
 
-const EmailSignature = () => {
+const BrandIdentity = () => {
     return (
         <div>
             <h1>Email Signature Generation</h1>
@@ -8,4 +8,4 @@ const EmailSignature = () => {
         </div>
     )
 }
-export default EmailSignature
+export default BrandIdentity
