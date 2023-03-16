@@ -45,21 +45,27 @@ const DigitalAnalytics: NextPage<Props> = () => {
         </div>
       </section>
 
-      <section className="agitate bg-white flex items-center flex-col">
+      <section className="agitate bg-white flex flex-col">
         <h2 className="text-3xl font-bold text-center mb-10 text-black">Are you dealing with these issues?</h2>
-        <div className="flex justify-center">
-          <Card 
+        <div className="flex flex-col md:flex-row items-center md:items-stretch"> {/* added items-center for mobile, items-stretch for desktop */}
+          <Card
             imageUrl="spray.png"
             title="Spray & Pray"
-            description="Do you know your marketing efforts will work or are you always wingin' it?"/>
-          <Card 
+            description="Do you know your marketing efforts will work or are you always wingin' it?"
+            className="mb-6 md:mb-0 md:mr-6 h-full"
+          />
+          <Card
             imageUrl="inaccuracy.png"
             title="Inaccurate Assumptions"
-            description="You thought your strategy to get new clients was going to be a bullseye, but it didn't land well. What happened?"/>
-          <Card 
+            description="You thought your strategy to get new clients was going to be a bullseye, but it didn't land well. What happened?"
+            className="mb-6 md:mb-0 md:mx-6 h-full"
+          />
+          <Card
             imageUrl="migraine.png"
             title="Frustration with Wasted Efforts"
-            description="You feel like digital marketing is fancy way to throw good money after bad. Everything you've done has gone bust."/>
+            description="You feel like digital marketing is fancy way to throw good money after bad. Everything you've done has gone bust."
+            className="mb-6 md:mb-0 md:ml-6 h-full"
+          />
         </div>
       </section>
 

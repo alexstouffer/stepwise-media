@@ -12,15 +12,16 @@ interface CardThreeProps {
   imageUrl: string;
   title: string;
   description: string;
+  className?: string;
 }
 
 const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description }) => {
   return (
-    <section className="grid place-items-center">
+    <section className="flex flex-col w-full max-w-[28rem]">
       <Card
         color="transparent"
         shadow={false}
-        className="w-auto max-w-[28rem]"
+        className="w-full h-full"
         nonce={undefined}
         onResize={undefined}
         onResizeCapture={undefined}
@@ -38,25 +39,27 @@ const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description }) =
           />
         </CardHeader>
         <CardBody
-          className="px-4"
+          className="flex flex-col justify-between px-4 h-full"
           nonce={undefined}
           onResize={undefined}
           onResizeCapture={undefined}
         >
-          <Typography
-            variant="h4"
-            color="blue-gray"
-            className="mt-1 mb-2 font-medium"
-          >
-            {title}
-          </Typography>
-          <Typography color="gray" className="mb-8">
-            {description}
-          </Typography>
+          <div className="mb-4">
+            <Typography
+              variant="h4"
+              color="blue-gray"
+              className="mt-1 mb-2 font-medium"
+            >
+              {title}
+            </Typography>
+            <Typography color="gray" className="mb-2">
+              {description}
+            </Typography>
+          </div>
           <Button
             variant="text"
             size="sm"
-            className="flex items-center"
+            className="flex items-center mb-4"
             nonce={undefined}
             onResize={undefined}
             onResizeCapture={undefined}
