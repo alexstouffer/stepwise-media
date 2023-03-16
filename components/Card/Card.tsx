@@ -1,10 +1,15 @@
 import React from 'react';
+import { Fragment, useState } from "react";
 import {
   Card,
   CardHeader,
   CardBody,
   Typography,
   Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
 } from '@material-tailwind/react';
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
@@ -13,9 +18,16 @@ interface CardThreeProps {
   title: string;
   description: string;
   className?: string;
+  dialogueHeader: string;
+  dialogueBody: string;
 }
 
-const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description }) => {
+
+
+const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description, dialogueHeader, dialogueBody }) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!open);
+
   return (
     <section className="flex flex-col w-full max-w-[28rem]">
       <Card
@@ -27,7 +39,7 @@ const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description }) =
         onResizeCapture={undefined}
       >
         <CardHeader
-          className="relative h-64"
+          className="relative lg:h-full md:h-64"
           nonce={undefined}
           onResize={undefined}
           onResizeCapture={undefined}
@@ -44,7 +56,7 @@ const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description }) =
           onResize={undefined}
           onResizeCapture={undefined}
         >
-          <div className="mb-4">
+          <div className="mb-4 mx-2">
             <Typography
               variant="h4"
               color="blue-gray"
@@ -63,6 +75,7 @@ const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description }) =
             nonce={undefined}
             onResize={undefined}
             onResizeCapture={undefined}
+            onClick={handleOpen}
           >
             read more
             <ArrowRightIcon
@@ -70,6 +83,28 @@ const CardThree: React.FC<CardThreeProps> = ({ imageUrl, title, description }) =
               strokeWidth={3}
             />
           </Button>
+          <Dialog open={open} handler={handleOpen} nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+            <DialogHeader nonce={undefined} onResize={undefined} onResizeCapture={undefined}>{dialogueHeader}</DialogHeader>
+            <DialogBody  nonce={undefined} onResize={undefined} onResizeCapture={undefined} divider>
+              {dialogueBody}
+            </DialogBody>
+            <DialogFooter  nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+              {/* <Button
+                onClick={handleOpen}
+                variant="text"
+                color="red"
+                className="mr-1"
+                nonce={undefined} 
+                onResize={undefined} 
+                onResizeCapture={undefined}             
+              >
+                <span>Cancel</span>
+              </Button> */}
+              <Button onClick={handleOpen} variant="gradient" color="green" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+                <span>Done</span>
+              </Button>
+            </DialogFooter>
+          </Dialog>
         </CardBody>
       </Card>
     </section>
