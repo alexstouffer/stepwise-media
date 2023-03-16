@@ -1,11 +1,9 @@
 import Navbar from '../components/Navbar/Navbar'
+import Features from '../components/Features/Features'
 
 const BrandIdentity = () => {
     return (
-        <div>
-            <h1>Email Signature Generation</h1>
-            <p>Information about the email signature generation service goes here.</p>
-        </div>
+        <Features />
     )
 }
 export default BrandIdentity

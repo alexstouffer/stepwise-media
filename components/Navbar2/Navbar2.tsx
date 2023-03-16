@@ -1,0 +1,175 @@
+import React, { useState, useEffect } from "react";
+import {
+Navbar,
+MobileNav,
+Typography,
+Button,
+IconButton,
+Tooltip,
+} from "@material-tailwind/react";
+import {
+Square3Stack3DIcon,
+PuzzlePieceIcon,
+CodeBracketSquareIcon,
+RocketLaunchIcon,
+} from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from 'next/link';
+
+interface NavItemProps {
+icon: JSX.Element;
+label: string;
+url?: string;
+}
+
+function NavItem({ icon, label, url }: NavItemProps) {
+return (
+<a href={url}>
+<Typography
+     as="li"
+     variant="small"
+     color="white"
+     className="flex items-center gap-1.5 p-1 font-normal"
+   >
+{icon}
+{label}
+</Typography>
+</a>
+);
+}
+
+function NavList() {
+return (
+<ul className="mb-4 mt-2 flex flex-col gap-3 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
+<NavItem
+icon={<RocketLaunchIcon className="h-5 w-5" />}
+label="Content Management"
+url="/brand-identity"
+/>
+<NavItem
+icon={<PuzzlePieceIcon className="h-5 w-5" />}
+label="Data Analysis"
+url="/digital-analytics"
+
+/>
+<NavItem
+icon={<CodeBracketSquareIcon className="h-5 w-5" />}
+label="Web Development"
+url="/web-development"
+/>
+<NavItem
+icon={<Square3Stack3DIcon className="h-5 w-5" />}
+label="Blog"
+/>
+</ul>
+);
+}
+
+export function Navbar2() {
+const [open, setOpen] = useState(false);
+const handleOpen = () => setOpen((cur) => !cur);
+
+useEffect(() => {
+window.addEventListener(
+"resize",
+() => window.innerWidth >= 960 && setOpen(false)
+);
+return () => {
+window.removeEventListener(
+"resize",
+() => window.innerWidth >= 960 && setOpen(false)
+);
+};
+}, []);
+
+return (
+<Navbar className="bg-black border-none bg-opacity-100" fullWidth nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+<div className="container mx-auto flex items-center justify-between">
+<Typography
+       as="a"
+       href="/"
+       variant="small"
+       color="white"
+       className="cursor-pointer py-1.5 font-bold"
+       >
+    <div className="flex items-center">
+        <img src="keys.svg" alt="logo" width="50" />
+        <p>Step Wise Media</p>
+    </div>
+</Typography>
+<div className="hidden lg:block">
+<NavList />
+</div>
+<div>
+        <Tooltip content="Under Development, check back soon" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+              <Button
+                color="white"
+                size="sm"
+                className="hidden lg:inline-block mr-2"
+                nonce={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              >
+                Sign Up
+              </Button>
+        </Tooltip>    
+        <IconButton
+        size="sm"
+        variant="text"
+        color="white"
+        onClick={handleOpen}
+        className="ml-auto inline-block lg:hidden"
+        nonce={undefined} 
+        onResize={undefined} 
+        onResizeCapture={undefined}
+        >
+
+    </IconButton>
+    <Tooltip content="Under Development, check back soon" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+        <Button
+            color="white"
+            size="sm"
+            className="hidden lg:inline-block"
+            nonce={undefined} 
+            onResize={undefined} 
+            onResizeCapture={undefined}
+            >
+        Log In
+        </Button>
+    </Tooltip>
+    <IconButton
+        size="sm"
+        variant="text"
+        color="white"
+        onClick={handleOpen}
+        className="ml-auto inline-block lg:hidden"
+        nonce={undefined} 
+        onResize={undefined} 
+        onResizeCapture={undefined}
+        >
+    {open ? (
+    <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+    ) : (
+    <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+    )}
+    </IconButton>
+</div>
+</div>
+<MobileNav open={open}>
+<NavList />
+<Tooltip content="Under Development, check back soon" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+    <Button color="white" size="sm" fullWidth className="mb-2" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+    Sign Up
+    </Button>
+</Tooltip>
+<Tooltip content="Under Development, check back soon" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+    <Button color="white" size="sm" fullWidth className="mb-2" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+    Log In
+    </Button>
+</Tooltip>
+</MobileNav>
+</Navbar>
+);
+}
+
+export default Navbar2;

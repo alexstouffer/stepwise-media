@@ -1,5 +1,4 @@
 import { GetServerSideProps } from 'next'
-import fetch from 'isomorphic-unfetch'
 
 interface BlogProps {
   posts: {
