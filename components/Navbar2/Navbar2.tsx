@@ -14,7 +14,6 @@ CodeBracketSquareIcon,
 RocketLaunchIcon,
 } from "@heroicons/react/24/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Link from 'next/link';
 
 interface NavItemProps {
 icon: JSX.Element;
@@ -101,18 +100,16 @@ return (
 <NavList />
 </div>
 <div>
-        <Tooltip content="Under Development, check back soon" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
-              <Button
-                color="white"
-                size="sm"
-                className="hidden lg:inline-block mr-2"
-                nonce={undefined}
-                onResize={undefined}
-                onResizeCapture={undefined}
-              >
-                Sign Up
-              </Button>
-        </Tooltip>    
+        <Button
+        color="white"
+        size="sm"
+        className="hidden lg:inline-block mr-2"
+        nonce={undefined}
+        onResize={undefined}
+        onResizeCapture={undefined}
+        >
+        Sign Up
+        </Button>
         <IconButton
         size="sm"
         variant="text"

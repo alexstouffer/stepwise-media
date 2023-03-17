@@ -5,6 +5,8 @@ import Accordion from '../components/Accordion/Accordion';
 import Card from '../components/Card/Card';
 import { Typography } from '@material-tailwind/react';
 import Testimonial from '../components/Testimonial/Testimonial';
+import PriceCard from '../components/PriceCard/PriceCard';
+import PriceCarousel from '../components/PriceCarousel/PriceCarousel';
 
 type Props = {};
 
@@ -34,6 +36,14 @@ const DigitalAnalytics: NextPage<Props> = () => {
       headerText: 'Refine Customer Experience',
       bodyText: 'A/B tests enable incremental changes to website or application design, allowing business owners to test variations of a webpage or feature to determine which version performs better with users. Personalized user experiences can also be created using analytics data, which can reveal which products or services a user is interested in, which emails they\'re opening and clicking on, and which website pages they\'re spending the most time on. This data can be used to create personalized product recommendations, email campaigns, and website content, all optimized for different devices and potential marketing touchpoints.',
     },
+  ];
+
+  const standardFeatures = [
+    "5 team members",
+    "200+ components",
+    "40+ built-in pages",
+    "1 year free updates",
+    "Life time technical support",
   ];
 
   return (
@@ -93,7 +103,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
         </div>
       </section>
 
-      <section className="p-10 w-full mx-auto bg-white text-black">
+      <section className="solution p-10 w-full mx-auto bg-white text-black">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">Say Goodbye to Guesswork: Let Us Help You Use Existing Customer Data to Raise Transaction Volume</h2>
           <div className="border-t border-b border-gray-200 py-8">
@@ -101,6 +111,14 @@ const DigitalAnalytics: NextPage<Props> = () => {
               <Accordion items={accordionItems} />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="pricing bg-white" >
+        <div className="flex p-10 justify-center h-full space-x-4">
+          <PriceCard title="Basic" monthlyFee={800} features={standardFeatures} className="h-full w-80 flex-shrink-0" />
+          <PriceCard title="Standard" monthlyFee={1000} features={standardFeatures} className="h-full w-80 flex-shrink-0" />
+          <PriceCard title="Business" monthlyFee={2000} features={standardFeatures} className="h-full w-80 flex-shrink-0" />
         </div>
       </section>
 
