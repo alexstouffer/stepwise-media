@@ -39,11 +39,11 @@ const DigitalAnalytics: NextPage<Props> = () => {
   ];
 
   const standardFeatures = [
-    "5 team members",
-    "200+ components",
-    "40+ built-in pages",
-    "1 year free updates",
-    "Life time technical support",
+    "Analytics & Tag Manager Audit",
+    "Datalayer Configurations",
+    "UTM Link Tracking Audit",
+    "Custom Events Reports",
+    "Strategy Development & Implementation",
   ];
 
   return (
