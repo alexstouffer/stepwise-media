@@ -6,25 +6,15 @@ interface PricePoint {
   value: number;
 }
 
-const generateRandomData = (length: number): PricePoint[] => {
-  const data: PricePoint[] = [];
-  let lastValue = 50 + Math.random() * 50;
+// Preset data
+const data: PricePoint[] = Array.from({ length: 400 }, (_, i) => ({
+  time: i,
+  value: 75 + 40 * Math.sin((2 * Math.PI * i) / 100),
+}));
 
-  for (let i = 0; i < length; i++) {
-    lastValue += Math.random() * 10 - 5;
-    data.push({
-      time: i,
-      value: lastValue,
-    });
-  }
-
-  return data;
-};
-
-const PriceChart: React.FC = () => {
+const SineWave: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
-  const data = generateRandomData(400);
-  const extendedData = data;
+  const extendedData = data.concat(data.map((d, i) => ({ ...d, time: d.time + data.length })));
 
   useEffect(() => {
     const svg = svgRef.current;
@@ -43,18 +33,12 @@ const PriceChart: React.FC = () => {
       .y((d) => yScale(d.value));
 
     // Create the path
-    const path = d3.select(svg)
-      .append('path')
-      .attr('d', lineGenerator(extendedData))
-      .attr('fill', 'none')
-      .attr('stroke', 'white')
-      .attr('stroke-width', 2);
-
+    const path = d3.select(svg).append('path').attr('d', lineGenerator(extendedData)).attr('fill', 'none').attr('stroke', 'white').attr('stroke-width', 4);
     const pathNode = path.node();
 
     if (pathNode) {
-      const pathLength = pathNode.getTotalLength();
-      path.attr('stroke-dasharray', pathLength).attr('stroke-dashoffset', 0);
+      const pathLength = pathNode.getTotalLength() / 2;
+      path.attr('stroke-dasharray', `${pathLength} ${pathLength}`).attr('stroke-dashoffset', 0);
 
       // Loop the animation
       const loop = () => {
@@ -72,30 +56,19 @@ const PriceChart: React.FC = () => {
           .duration(10000)
           .ease(d3.easeLinear)
           .attrTween('viewBox', () => {
-            const i = d3.interpolateNumber(0, width * 2);
+            const i = d3.interpolateNumber(0, width);
             return (t: number) => {
               const x = i(t);
               return `${x} 0 ${width} ${height}`;
             };
-          });
+          })
+          .on('end', loop);
       };
       loop();
     }
   }, [extendedData]);
 
-  return (
-    <svg ref={svgRef} style={{ width: '100%', height: '300px' }}>
-      <style>
-        {`
-          svg text {
-            fill: none;
-            stroke: white;
-            stroke-width: 2px;
-          }
-        `}
-      </style>
-    </svg>
-  );
+  return <svg ref={svgRef} style={{ width: '100%', height: '300px' }} />;
 };
 
-export default PriceChart;
+export default SineWave;

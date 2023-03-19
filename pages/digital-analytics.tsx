@@ -8,6 +8,7 @@ import Testimonial from '../components/Testimonial/Testimonial';
 import PriceCard from '../components/PriceCard/PriceCard';
 import AnimatedHeartBeat from '../components/AnimatedHeartBeat/AnimatedHeartBeat';
 import AnimatedPriceChart from '../components/AnimatedPriceChart/AnimatedPriceChart';
+import AnimatedSineWave from '../components/AnimatedSineWave/AnimatedSineWave';
 
 type Props = {};
 
@@ -67,7 +68,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
       id: 5,
       headerText: "What if I'm not satisfied with the results?",
       bodyText:
-        "We are committed to providing our clients with measurable results. If you are not satisfied with the progress of your project, we will work with you to make it right or provide a refund.",
+        "We are committed to providing our clients with measurable results and will work with you for an additional month at no charge, if we fail to do so.",
     },
     {
       id: 6,
@@ -116,7 +117,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
       </section>
 
       <section className="problem p-10 bg-white flex flex-col md:flex-row">
-        <div className="w-full md:w-1/3 flex items-center justify-center p-10">
+        <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/confrontation.png')] bg-top bg-auto">
           <AnimatedPriceChart />
         </div>
         <div className="w-full md:w-2/3 p-10 flex md:items-center">
@@ -159,7 +160,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
         </div>
       </section>
 
-      <section className="solution p-10 w-full mx-auto bg-white text-black">
+      <section className="solution p-10 w-full mx-auto bg-white text-black lg:text-center">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">Say Goodbye to Guesswork: Let Us Help You Use Existing Customer Data to Raise Transaction Volume</h2>
           <div className="flex flex-wrap justify-center items-center">
