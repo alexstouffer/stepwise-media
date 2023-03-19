@@ -9,6 +9,8 @@ import PriceCard from '../components/PriceCard/PriceCard';
 import AnimatedHeartBeat from '../components/AnimatedHeartBeat/AnimatedHeartBeat';
 import AnimatedPriceChart from '../components/AnimatedPriceChart/AnimatedPriceChart';
 import AnimatedSineWave from '../components/AnimatedSineWave/AnimatedSineWave';
+import AnimatedSquareWave from '../components/AnimatedSquareWave/AnimatedSquareWave';
+import AnimatedSawWave from '../components/AnimatedSawWave/AnimatedSawWave';
 
 type Props = {};
 
@@ -118,7 +120,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
 
       <section className="problem p-10 bg-white flex flex-col md:flex-row">
         <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/confrontation.png')] bg-top bg-auto">
-          <AnimatedPriceChart />
+          <AnimatedSawWave />
         </div>
         <div className="w-full md:w-2/3 p-10 flex md:items-center">
           <div>
