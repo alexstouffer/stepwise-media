@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const AnimatedLineChart: React.FC = () => {
+const AnimatedHeartBeat: React.FC = () => {
   const lineRef = useRef<SVGPathElement>(null);
 
   const animate = () => {
@@ -45,4 +45,4 @@ const AnimatedLineChart: React.FC = () => {
   );
 };
 
-export default AnimatedLineChart
+export default AnimatedHeartBeat

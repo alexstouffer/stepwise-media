@@ -6,7 +6,7 @@ import Card from '../components/Card/Card';
 import { Typography } from '@material-tailwind/react';
 import Testimonial from '../components/Testimonial/Testimonial';
 import PriceCard from '../components/PriceCard/PriceCard';
-import AnimatedLineChart from '../components/LineChartAnimation/LineChartAnimation';
+import AnimatedHeartBeat from '../components/AnimatedHeartBeat/AnimatedHeartBeat';
 
 type Props = {};
 
@@ -168,11 +168,11 @@ const DigitalAnalytics: NextPage<Props> = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2 md:pl-4">
-              <AnimatedLineChart />
+              <div className="bg-black p-10 rounded-xl text-center md:text-right">
+                <AnimatedHeartBeat />
+                <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Analytics tracks the heartbeat of every online business</h2>
+              </div>
             </div>
-          </div>
-          <div className="bg-black p-10 rounded-xl text-center md:text-right">
-            <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Not only will we help guide your growth, we will tend to it personally.</h2>
           </div>
         </div>
       </section>
