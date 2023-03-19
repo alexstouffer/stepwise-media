@@ -6,7 +6,7 @@ import Card from '../components/Card/Card';
 import { Typography } from '@material-tailwind/react';
 import Testimonial from '../components/Testimonial/Testimonial';
 import PriceCard from '../components/PriceCard/PriceCard';
-import PriceCarousel from '../components/PriceCarousel/PriceCarousel';
+import AnimatedLineChart from '../components/LineChartAnimation/LineChartAnimation';
 
 type Props = {};
 
@@ -38,13 +38,68 @@ const DigitalAnalytics: NextPage<Props> = () => {
     },
   ];
 
-  const standardFeatures = [
+  const faqs = [
+    {
+      id: 1,
+      headerText: "How long does it take to see results?",
+      bodyText:
+        "Results vary depending on the complexity of the project, but typically clients see improvement in the first few weeks and substantial results within 3-6 months.",
+    },
+    {
+      id: 2,
+      headerText: "What results can I expect to see?",
+      bodyText: "Analytics provides valuable insights into the performance of your website and digital marketing campaigns. By measuring key metrics such as website traffic, user behavior, and conversion rates, you can make data-driven decisions to optimize your online presence and drive better results. However, it's important to keep in mind that analytics is just one piece of the puzzle. To see the best results, we recommend combining analytics with other digital marketing services such as content marketing and web development maintenance packages. Visit our package deals page for comprehensive support features."
+    },
+    {
+      id: 3,
+      headerText: "What is included in the monthly fee?",
+      bodyText:
+        "The monthly fee includes ongoing website analysis, custom dashboard reporting, customer behavior tracking, and access to our team of experts for support and recommendations.",
+    },
+    {
+      id: 4,
+      headerText: "Do I have to sign a long-term contract?",
+      bodyText:
+        "No, we do not require long-term contracts. We offer month-to-month services to give you the flexibility to adjust your plan as needed.",
+    },
+    {
+      id: 5,
+      headerText: "What if I'm not satisfied with the results?",
+      bodyText:
+        "We are committed to providing our clients with measurable results. If you are not satisfied with the progress of your project, we will work with you to make it right or provide a refund.",
+    },
+    {
+      id: 6,
+      headerText: "How do I get started?",
+      bodyText:
+        "Getting started is easy! Simply choose a plan and click the 'Buy Now' button to complete a purchase. From there, we will reach out to you to get your project started.",
+    }
+  ];
+  
+
+  const basicFeatures = [
     "Analytics & Tag Manager Audit",
-    "Datalayer Configurations",
     "UTM Link Tracking Audit",
-    "Custom Events Reports",
+    "Basic Customer Behavior Tracking",
+    "Conversion Rate Optimization",
     "Strategy Development & Implementation",
   ];
+
+  const standardFeatures = [
+    "Everything in Basic Tier",
+    "Datalayer Configurations",
+    "Ecommerce Custom Events",
+    "Looker Studio Custom Dashboard",
+    "Instant Insights: See needed improvements fast"
+  ]
+
+  const businessFeatures = [
+    "Everything in Standard Tier",
+    "Customer Order Analysis",
+    "Audience Segmentation",
+    "BigQuery SQL Reports",
+    "Instant Access to our Process Automation Pilot Program"
+  ]
 
   return (
     <div className="text-secondary bg-primary">
@@ -104,22 +159,33 @@ const DigitalAnalytics: NextPage<Props> = () => {
       </section>
 
       <section className="solution p-10 w-full mx-auto bg-white text-black">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">Say Goodbye to Guesswork: Let Us Help You Use Existing Customer Data to Raise Transaction Volume</h2>
-          <div className="border-t border-b border-gray-200 py-8">
-            <div className="space-y-4">
-              <Accordion items={accordionItems} />
+          <div className="flex flex-wrap justify-center">
+            <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
+              <div className="space-y-4">
+                <Accordion items={accordionItems} />
+              </div>
             </div>
+            <div className="w-full md:w-1/2 md:pl-4">
+              <AnimatedLineChart />
+            </div>
+          </div>
+          <div className="bg-black p-10 rounded-xl text-center md:text-right">
+            <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Not only will we help guide your growth, we will tend to it personally.</h2>
           </div>
         </div>
       </section>
 
-      <section className="pricing bg-white" >
-        <div className="flex p-10 justify-center h-full space-x-4">
-          <PriceCard title="Basic" monthlyFee={800} features={standardFeatures} className="h-full w-80 flex-shrink-0" />
-          <PriceCard title="Standard" monthlyFee={1000} features={standardFeatures} className="h-full w-80 flex-shrink-0" />
-          <PriceCard title="Business" monthlyFee={2000} features={standardFeatures} className="h-full w-80 flex-shrink-0" />
+      <section className="pricing bg-white">
+        <h2 className="text-3xl font-bold text-center mb-2 text-black">Choose Your Plan</h2>
+        <h4 className="text-md font-italic text-center text-black">No long term contracts. Cancel at any time.</h4>
+        <div className="flex flex-wrap justify-center p-10 space-x-4">
+          <PriceCard title="Basic" monthlyFee={800} features={basicFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
+          <PriceCard title="Standard" monthlyFee={1000} features={standardFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
+          <PriceCard title="Business" monthlyFee={2000} features={businessFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
         </div>
+        <h4 className="text-md font-italic text-center text-black text-bold">Act now to secure your spot - client availability is limited!</h4>
       </section>
 
       <section className="bg-white flex justify-center">
@@ -128,8 +194,19 @@ const DigitalAnalytics: NextPage<Props> = () => {
         </div>
       </section>
 
-      <section className="bg-white p-10 mx-auto">
-        <form onSubmit={handleSubmit} className="bg-cultured w-full p-10 rounded-lg shadow-lg">
+      <section className="faqs p-10 w-full mx-auto bg-white text-black">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+          <div className="border-t border-b border-gray-200 py-8">
+            <div className="space-y-4">
+              <Accordion items={faqs} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white p-10 mx-auto flex justify-center">
+        <form onSubmit={handleSubmit} className="bg-cultured w-full p-10 rounded-lg shadow-lg max-w-4xl">
           <div className="mb-5">
             <h2 className="text-gray-700 text-xl pb-5 font-bold text-center">Our newsletter is the ideal solution for those eager to expand their knowledge. Subscribe now!</h2>
             <hr className="border-accent border-2 border-dotted w-1/2 mx-auto mb-10" />

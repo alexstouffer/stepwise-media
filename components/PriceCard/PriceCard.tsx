@@ -15,9 +15,21 @@ import {
     className?: string;
   }
   
-  export default function PriceCard({ title, monthlyFee, features }: PriceCardProps) {
+  export default function PriceCard({
+    title,
+    monthlyFee,
+    features,
+    className,
+  }: PriceCardProps) {
     return (
-      <Card color="blue" variant="gradient" className="w-full max-w-[20rem] p-8" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+      <Card
+        color="deep-purple"
+        variant="gradient"
+        className={`w-full max-w-[20rem] p-8 ${className}`}
+        nonce={undefined}
+        onResize={undefined}
+        onResizeCapture={undefined}
+      >
         <CardHeader
           floated={false}
           shadow={false}
@@ -44,7 +56,7 @@ import {
             <span className="self-end text-4xl">/mo</span>
           </Typography>
         </CardHeader>
-        <CardBody className="p-0" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+        <CardBody className="p-0 pb-5" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
           <ul className="flex flex-col gap-4">
             {features.map((feature) => (
               <li key={feature} className="flex items-center gap-4">
@@ -56,7 +68,12 @@ import {
             ))}
           </ul>
         </CardBody>
-        <CardFooter className="mt-12 p-0" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+        <CardFooter
+          className="mt-auto p-0"
+          nonce={undefined}
+          onResize={undefined}
+          onResizeCapture={undefined}
+        >
           <Button
             size="lg"
             color="white"
