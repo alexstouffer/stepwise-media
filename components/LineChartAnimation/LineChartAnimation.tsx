@@ -1,62 +1,48 @@
-// AnimatedLineChart.tsx
 import React, { useEffect, useRef } from 'react';
 
 const AnimatedLineChart: React.FC = () => {
-  const chartRef = useRef<SVGSVGElement>(null);
+  const lineRef = useRef<SVGPathElement>(null);
 
-  const animateArrow = () => {
-    if (!chartRef.current) return;
-    
-    const arrow = chartRef.current.querySelector('#arrow');
-    const path = chartRef.current.querySelector('#linePath') as SVGPathElement;
-
-    if (!arrow || !path) return;
-
-    const pathLength = path.getTotalLength();
-
-    const animationDuration = 5000;
-    let startTime: number | null = null;
-
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = (timestamp - startTime) % animationDuration;
-      const position = progress / animationDuration * pathLength;
-
-      const { x, y } = path.getPointAtLength(position);
-      arrow.setAttribute('transform', `translate(${x}, ${y})`);
-
-      requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
+  const animate = () => {
+    if (lineRef.current) {
+      const pathLength = lineRef.current.getTotalLength();
+      lineRef.current.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      lineRef.current.style.strokeDashoffset = `${pathLength}`;
+      lineRef.current.getBoundingClientRect();
+      lineRef.current.style.transition = 'stroke-dashoffset 2s linear';
+      lineRef.current.style.strokeDashoffset = '0';
+    }
   };
 
   useEffect(() => {
-    animateArrow();
+    animate();
+    const interval = setInterval(() => {
+      setTimeout(animate, 100);
+      if (lineRef.current) {
+        lineRef.current.style.transition = 'none';
+        void lineRef.current.getBoundingClientRect(); // Trigger reflow to restart the animation
+      }
+    }, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <svg ref={chartRef} width="500" height="300" viewBox="0 0 500 300">
-      <g id="linePathContainer">
+    <div className="w-full h-full flex items-center justify-center">
+      <svg
+        className="w-2/3 h-2/3 text-green-500"
+        viewBox="0 0 200 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          id="linePath"
-          d="M10,260 Q50,180 100,190 Q150,200 200,140 Q250,80 300,120 Q350,160 400,120 Q450,80 490,140"
+          ref={lineRef}
+          d="M0,50 L90,50 Q95,55 100,40 Q105,25 110,50 L200,50"
           fill="none"
-          stroke="black"
-          strokeWidth="2"
+          stroke="currentColor"
+          strokeWidth="3"
         />
-      </g>
-      <g id="arrow" fill="red">
-        <path d="M0,0 L-5,-5 L5,-5 Z" />
-      </g>
-      <g id="xAxis">
-        <line x1="10" y1="260" x2="490" y2="260" stroke="black" strokeWidth="2" />
-      </g>
-      <g id="yAxis">
-        <line x1="10" y1="10" x2="10" y2="260" stroke="black" strokeWidth="2" />
-      </g>
-    </svg>
+      </svg>
+    </div>
   );
 };
 
-export default AnimatedLineChart;
+export default AnimatedLineChart
