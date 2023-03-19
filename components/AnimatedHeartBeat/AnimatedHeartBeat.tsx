@@ -9,8 +9,9 @@ const AnimatedHeartBeat: React.FC = () => {
       lineRef.current.style.strokeDasharray = `${pathLength} ${pathLength}`;
       lineRef.current.style.strokeDashoffset = `${pathLength}`;
       lineRef.current.getBoundingClientRect();
-      lineRef.current.style.transition = 'stroke-dashoffset 2s linear';
+      lineRef.current.style.transition = 'stroke-dashoffset 3s linear, opacity .25s linear';
       lineRef.current.style.strokeDashoffset = '0';
+      lineRef.current.style.opacity = '1';
     }
   };
 
@@ -20,9 +21,10 @@ const AnimatedHeartBeat: React.FC = () => {
       setTimeout(animate, 100);
       if (lineRef.current) {
         lineRef.current.style.transition = 'none';
+        lineRef.current.style.opacity = '0';
         void lineRef.current.getBoundingClientRect(); // Trigger reflow to restart the animation
       }
-    }, 2000);
+    }, 3200);
     return () => clearInterval(interval);
   }, []);
 
@@ -39,10 +41,11 @@ const AnimatedHeartBeat: React.FC = () => {
           fill="none"
           stroke="currentColor"
           strokeWidth="3"
+          opacity="0"
         />
       </svg>
     </div>
   );
 };
 
-export default AnimatedHeartBeat
+export default AnimatedHeartBeat;

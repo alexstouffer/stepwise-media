@@ -161,7 +161,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
       <section className="solution p-10 w-full mx-auto bg-white text-black">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold mb-6">Say Goodbye to Guesswork: Let Us Help You Use Existing Customer Data to Raise Transaction Volume</h2>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center items-center">
             <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
               <div className="space-y-4">
                 <Accordion items={accordionItems} />
