@@ -8,6 +8,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "@material-tailwind/react": "^1.4.2",
+    "d3": "^7.8.2",
     "framer-motion": "^9.0.2",
     "next": "latest",
     "react": "18.2.0",
@@ -16,6 +17,7 @@
     "react-spring": "^9.6.1"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.0",
     "@types/node": "18.11.3",
     "@types/react": "^18.0.21",
     "@types/react-dom": "18.0.6",

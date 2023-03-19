@@ -23,7 +23,7 @@ import {
   }: PriceCardProps) {
     return (
       <Card
-        color="deep-purple"
+        color="green"
         variant="gradient"
         className={`w-full max-w-[20rem] p-8 ${className}`}
         nonce={undefined}

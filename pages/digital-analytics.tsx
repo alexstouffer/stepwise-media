@@ -7,6 +7,7 @@ import { Typography } from '@material-tailwind/react';
 import Testimonial from '../components/Testimonial/Testimonial';
 import PriceCard from '../components/PriceCard/PriceCard';
 import AnimatedHeartBeat from '../components/AnimatedHeartBeat/AnimatedHeartBeat';
+import AnimatedPriceChart from '../components/AnimatedPriceChart/AnimatedPriceChart';
 
 type Props = {};
 
@@ -116,7 +117,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
 
       <section className="problem p-10 bg-white flex flex-col md:flex-row">
         <div className="w-full md:w-1/3 flex items-center justify-center p-10">
-          <img className="rounded-xl" src="mind-map.png" />
+          <AnimatedPriceChart />
         </div>
         <div className="w-full md:w-2/3 p-10 flex md:items-center">
           <div>
