@@ -7,11 +7,7 @@ import { Typography } from '@material-tailwind/react';
 import Testimonial from '../components/Testimonial/Testimonial';
 import PriceCard from '../components/PriceCard/PriceCard';
 import AnimatedHeartBeat from '../components/AnimatedHeartBeat/AnimatedHeartBeat';
-import AnimatedPriceChart from '../components/AnimatedPriceChart/AnimatedPriceChart';
-import AnimatedSineWave from '../components/AnimatedSineWave/AnimatedSineWave';
-import AnimatedSquareWave from '../components/AnimatedSquareWave/AnimatedSquareWave';
-import AnimatedSawWave from '../components/AnimatedSawWave/AnimatedSawWave';
-import AnimatedBarGraph from '../components/AnimatedBarGraph/AnimatedBarGraph';
+import NewsletterForm from '../components/NewsletterSignup/NewsletterSignup';
 
 type Props = {};
 
@@ -121,7 +117,6 @@ const DigitalAnalytics: NextPage<Props> = () => {
 
       <section className="problem p-10 bg-white flex flex-col md:flex-row">
         <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/confrontation.png')] bg-top bg-auto rounded-xl">
-          <AnimatedBarGraph />
         </div>
         <div className="w-full md:w-2/3 p-10 flex md:items-center">
           <div>
@@ -173,9 +168,11 @@ const DigitalAnalytics: NextPage<Props> = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2 md:pl-4">
-              <div className="bg-black p-10 rounded-xl text-center md:text-right">
-                <AnimatedHeartBeat />
-                <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Analytics tracks the heartbeat of every online business</h2>
+              <div className="bg-[url('/main-street.png')] bg-center bg-cover rounded-xl">
+                <div className="bg-green-900 p-10 rounded-xl text-center md:text-right bg-opacity-80">
+                  <AnimatedHeartBeat />
+                  <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Analytics tracks the heartbeat of your business</h2>
+                </div>
               </div>
             </div>
           </div>
@@ -211,22 +208,7 @@ const DigitalAnalytics: NextPage<Props> = () => {
       </section>
 
       <section className="bg-white p-10 mx-auto flex justify-center">
-        <form onSubmit={handleSubmit} className="bg-cultured w-full p-10 rounded-lg shadow-lg max-w-4xl">
-          <div className="mb-5">
-            <h2 className="text-gray-700 text-xl pb-5 font-bold text-center">Our newsletter is the ideal solution for those eager to expand their knowledge. Subscribe now!</h2>
-            <hr className="border-accent border-2 border-dotted w-1/2 mx-auto mb-10" />
-            <label className="block text-gray-700 font-medium mb-2">
-              Email:
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="border border-gray-400 p-2 w-full focus:outline-none focus:border-accent focus:shadow-outline"
-            />
-          </div>
-          <button type="submit" className="bg-accent text-primary py-2 px-4 rounded-full w-full transition duration-200 ease-in-out hover:bg-accent-lighter hover:text-primary-dark">Sign up</button>
-        </form>
+        <NewsletterForm />
       </section>
 
     </div>

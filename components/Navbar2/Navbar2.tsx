@@ -43,12 +43,12 @@ return (
 <NavItem
 icon={<RocketLaunchIcon className="h-5 w-5" />}
 label="Content Management"
-url="/brand-identity"
+url="/content-management"
 />
 <NavItem
 icon={<PuzzlePieceIcon className="h-5 w-5" />}
-label="Data Analysis"
-url="/digital-analytics"
+label="Analytics Measurement"
+url="/analytics-measurement"
 
 />
 <NavItem
@@ -93,13 +93,14 @@ return (
        >
     <div className="flex items-center">
         <img src="keys.svg" alt="logo" width="50" />
-        <p>Step Wise Media</p>
+        <p>StepWise Media</p>
     </div>
 </Typography>
 <div className="hidden lg:block">
 <NavList />
 </div>
 <div>
+        <a href="/sign-up">
         <Button
         color="white"
         size="sm"
@@ -110,6 +111,7 @@ return (
         >
         Sign Up
         </Button>
+        </a>
         <IconButton
         size="sm"
         variant="text"
@@ -122,7 +124,7 @@ return (
         >
 
     </IconButton>
-    <Tooltip content="Under Development, check back soon" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+        <a href="/sign-in">
         <Button
             color="white"
             size="sm"
@@ -133,7 +135,7 @@ return (
             >
         Log In
         </Button>
-    </Tooltip>
+        </a>
     <IconButton
         size="sm"
         variant="text"

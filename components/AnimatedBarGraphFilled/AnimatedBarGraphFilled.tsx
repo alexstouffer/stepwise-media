@@ -65,7 +65,7 @@ const AnimatedBarGraphFilled: React.FC = () => {
       gradient
         .append('stop')
         .attr('offset', '100%')
-        .attr('stop-color', 'white')
+        .attr('stop-color', 'orange')
         .attr('stop-opacity', 0);
 
       d3.select(svg)

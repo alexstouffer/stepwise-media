@@ -1,6 +1,12 @@
 import { Typography, Button, IconButton } from "@material-tailwind/react";
 
-const links = ["Overview", "Features", "Pricing", "Careers", "Help", "Privacy"];
+const links = [
+  { name: "Pricing", href: "#" },
+  { name: "Careers", href: "#" },
+  { name: "Help", href: "#" },
+  { name: "Privacy", href: "/privacy" },
+];
+
 const currentYear = new Date().getFullYear();
 
 export function Footer() {
@@ -10,27 +16,27 @@ export function Footer() {
         <div className="flex flex-wrap justify-center gap-8 md:justify-between">
           <div className="text-center md:text-left">
             <Typography variant="h4" color="white" className="mb-6">
-              Step Wise Media
+              StepWise Media
             </Typography>
             <Typography color="white" className="mb-12">
               We help business owners expand their online reach across markets
               <br />and use content marketing to drive consistent passive inbound traffic monthly.
             </Typography>
             <ul className="flex flex-wrap items-center justify-center md:justify-start">
-              {links.map((link, idx) => (
-                <li key={link}>
-                  <Typography
-                    as="a"
-                    href="#"
-                    color="white"
-                    className={`py-1 font-normal transition-colors ${
-                      idx === 0 ? "pr-3" : "px-3"
-                    }`}
-                  >
-                    {link}
-                  </Typography>
-                </li>
-              ))}
+            {links.map((link) => (
+              <li key={link.name}>
+                <Typography
+                  as="a"
+                  href={link.href}
+                  color="white"
+                  className={`py-1 font-normal transition-colors ${
+                    link.name === links[0].name ? "pr-3" : "px-3"
+                  }`}
+                >
+                  {link.name}
+                </Typography>
+              </li>
+            ))}
             </ul>
           </div>
           <div className="mt-8 w-full md:mt-0 md:w-auto">
@@ -49,7 +55,7 @@ export function Footer() {
                 onResizeCapture={undefined}              
                 >
                 <img
-                  src="/logos/logo-ios.svg"
+                  src="/logo-apple.png"
                   className="-mt-0.5 mr-2 h-6 w-6"
                   alt="ios"
                 />
@@ -66,7 +72,7 @@ export function Footer() {
                 onResizeCapture={undefined}  
               >
                 <img
-                  src="/logos/logo-google-play.svg"
+                  src="/logo-google.png"
                   className="-mt-0.5 mr-2 h-6 w-6"
                   alt="ios"
                 />
@@ -80,7 +86,7 @@ export function Footer() {
             color="white"
             className="text-center font-normal opacity-60"
           >
-            &copy; {currentYear} Step Wise Media, All rights reserved.
+            &copy; {currentYear} StepWise Media, All rights reserved.
           </Typography>
 
           <div className="flex gap-2">

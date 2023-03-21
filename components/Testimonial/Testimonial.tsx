@@ -42,7 +42,7 @@ import {
                 color="blue-gray"
                 className="mb-10 font-medium"
               >
-                "Step Wise Media helped me learn more about modern marketing tools and techniques than I ever knew. They did all the work for me, so I had all the answers I needed without dedicating my time and labor. Highly recommend!"
+                "StepWise Media helped me learn more about modern marketing tools and techniques than I ever knew. They did all the work for me, so I had all the answers I needed without dedicating my time and labor. Highly recommend!"
               </Typography>
               <Typography
                 variant="lead"

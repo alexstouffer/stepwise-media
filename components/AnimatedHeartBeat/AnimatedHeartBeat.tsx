@@ -39,7 +39,7 @@ const AnimatedHeartBeat: React.FC = () => {
           ref={lineRef}
           d="M0,50 L90,50 Q95,55 100,40 Q105,25 110,50 L200,50"
           fill="none"
-          stroke="currentColor"
+          stroke="white"
           strokeWidth="3"
           opacity="0"
         />
