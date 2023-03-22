@@ -26,10 +26,10 @@ export default function Example({ items }: Props) {
     <Fragment>
       {items.map(item => (
         <Accordion key={item.id} open={open === item.id} nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
-          <AccordionHeader onClick={() => handleOpen(item.id)} className="text-black hover:text-accent" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+          <AccordionHeader onClick={() => handleOpen(item.id)} className="text-black hover:text-accent text-left" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
             {item.headerText}
           </AccordionHeader>
-          <AccordionBody className="text-black text-md">
+          <AccordionBody className="text-black text-md text-left">
             {item.bodyText}
           </AccordionBody>
         </Accordion>

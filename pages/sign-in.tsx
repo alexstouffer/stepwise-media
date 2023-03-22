@@ -9,7 +9,7 @@ function SignIn(): JSX.Element {
           Welcome back
         </Typography>
         <Typography color="gray" className="mb-16">
-          Welcome back, please enter your details.
+          Please enter your details
         </Typography>
 
         <form action="#" className="mx-auto max-w-[24rem] text-left">
@@ -60,7 +60,7 @@ function SignIn(): JSX.Element {
         </form>
       </div>
       <img
-        src="https://images.unsplash.com/photo-1613125700782-8394bec3e89d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bmF0aW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        src="analytics-hero.png"
         alt="background image"
         className="hidden h-screen w-full object-cover lg:block"
       />

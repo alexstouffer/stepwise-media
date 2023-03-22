@@ -7,9 +7,6 @@ function SignUp(): JSX.Element {
         <Typography variant="h3" color="blue-gray" className="mb-2">
           Create an account
         </Typography>
-        <Typography color="gray" className="mb-12">
-          Start your 30 days free trial.
-        </Typography>
         <form action="#" className="mx-auto max-w-[24rem] text-left">
           <Input 
             size="lg" 

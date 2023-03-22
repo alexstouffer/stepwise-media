@@ -11,7 +11,7 @@ import NewsletterForm from '../components/NewsletterSignup/NewsletterSignup';
 
 type Props = {};
 
-const DigitalAnalytics: NextPage<Props> = () => {
+const AnalyticsMeasurement: NextPage<Props> = () => {
   const [email, setEmail] = useState('');
   const router = useRouter();
 
@@ -215,4 +215,4 @@ const DigitalAnalytics: NextPage<Props> = () => {
   );
 };
 
-export default DigitalAnalytics;
+export default AnalyticsMeasurement;
