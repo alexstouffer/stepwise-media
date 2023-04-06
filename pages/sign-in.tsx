@@ -5,7 +5,7 @@ function SignIn(): JSX.Element {
   return (
     <section className="grid h-screen items-center lg:grid-cols-2">
       <div className="my-auto p-8 text-center sm:p-10 md:p-20 xl:px-32 xl:py-24">
-        <Typography variant="h3" color="blue-gray" className="mb-2">
+        <Typography variant="h3" color="green" className="mb-2">
           Welcome back
         </Typography>
         <Typography color="gray" className="mb-16">
@@ -31,18 +31,18 @@ function SignIn(): JSX.Element {
                   className: "font-medium",
                 }} nonce={undefined} onResize={undefined} onResizeCapture={undefined}              />
             </div>
-            <Typography as="a" href="#" color="blue" className="font-medium">
+            <Typography as="a" href="/reset" color="green" className="font-medium">
               Forgot password
             </Typography>
           </div>
 
-            <Button size="lg" className="mt-6" fullWidth nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+            <Button size="lg" className="mt-6 bg-green-800" fullWidth nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
               sign in
             </Button>
 
           <Button
             variant="outlined"
-            color="blue-gray"
+            color="green"
             size="lg"
             className="mt-4 flex h-12 items-center justify-center gap-2"
             fullWidth

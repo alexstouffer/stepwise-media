@@ -1,7 +1,7 @@
 import { Typography, Button, IconButton } from "@material-tailwind/react";
 
 const links = [
-  { name: "Pricing", href: "#" },
+  // { name: "Bundled Services", href: "#" },
   { name: "Careers", href: "/careers" },
   { name: "Privacy", href: "/privacy" },
 ];

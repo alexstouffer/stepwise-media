@@ -51,11 +51,11 @@ label="Analytics Measurement"
 url="/analytics-measurement"
 
 />
-<NavItem
+{/* <NavItem
 icon={<CodeBracketSquareIcon className="h-5 w-5" />}
 label="Web Development"
 url="/web-development"
-/>
+/> */}
 <NavItem
 icon={<Square3Stack3DIcon className="h-5 w-5" />}
 label="Blog"
@@ -89,18 +89,17 @@ return (
        href="/"
        variant="small"
        color="white"
-       className="cursor-pointer py-1.5 font-bold"
+       className="cursor-pointer py-1.5 font-bold p-0"
        >
     <div className="flex items-center">
-        <img src="keys.svg" alt="logo" width="50" />
-        <p>StepWise Media</p>
+        <img src="/logo-stepwise-media.png" alt="logo" width="200" />
     </div>
 </Typography>
 <div className="hidden lg:block">
 <NavList />
 </div>
 <div>
-        <a href="/sign-up">
+        <a href="/register">
         <Button
         color="white"
         size="sm"
@@ -109,31 +108,7 @@ return (
         onResize={undefined}
         onResizeCapture={undefined}
         >
-        Sign Up
-        </Button>
-        </a>
-        <IconButton
-        size="sm"
-        variant="text"
-        color="white"
-        onClick={handleOpen}
-        className="ml-auto inline-block lg:hidden"
-        nonce={undefined} 
-        onResize={undefined} 
-        onResizeCapture={undefined}
-        >
-
-    </IconButton>
-        <a href="/sign-in">
-        <Button
-            color="white"
-            size="sm"
-            className="hidden lg:inline-block"
-            nonce={undefined} 
-            onResize={undefined} 
-            onResizeCapture={undefined}
-            >
-        Log In
+        Register
         </Button>
         </a>
     <IconButton
@@ -146,11 +121,39 @@ return (
         onResize={undefined} 
         onResizeCapture={undefined}
         >
-    {open ? (
-    <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-    ) : (
-    <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-    )}
+        {open ? (
+        <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+        ) : (
+        <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+        )}
+    </IconButton>
+        <a href="/sign-in">
+        <Button
+            color="white"
+            size="sm"
+            className="hidden lg:inline-block"
+            nonce={undefined} 
+            onResize={undefined} 
+            onResizeCapture={undefined}
+            >
+        Sign In
+        </Button>
+        </a>
+    <IconButton
+        size="sm"
+        variant="text"
+        color="white"
+        onClick={handleOpen}
+        className="ml-auto inline-block lg:hidden"
+        nonce={undefined} 
+        onResize={undefined} 
+        onResizeCapture={undefined}
+        >
+        {open ? (
+        <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+        ) : (
+        <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+        )}
     </IconButton>
 </div>
 </div>

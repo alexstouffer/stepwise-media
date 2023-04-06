@@ -195,7 +195,13 @@ const WebDevelopment: NextPage<Props> = () => {
 
       <section className="bg-white flex justify-center">
         <div className="w-5/6">
-          <Testimonial />
+        <Testimonial 
+            imgSrc="leo.png"
+            rating={5}
+            testimonialText="StepWise Media helped me learn more about modern marketing tools and techniques than I ever knew. They did all the work for me, so I had all the answers I needed without dedicating my time and labor. Highly recommend!"
+            authorName="Leo Martinez"
+            authorPosition="Head of Marketing, TurboHeatWeldingTools.com"
+          />
         </div>
       </section>
 

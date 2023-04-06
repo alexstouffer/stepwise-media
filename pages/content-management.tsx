@@ -6,10 +6,8 @@ import Card from '../components/Card/Card';
 import { Typography } from '@material-tailwind/react';
 import Testimonial from '../components/Testimonial/Testimonial';
 import PriceCard from '../components/PriceCard/PriceCard';
-import AnimatedHeartBeat from '../components/AnimatedHeartBeat/AnimatedHeartBeat';
 import NewsletterForm from '../components/NewsletterSignup/NewsletterSignup';
-import AnimatedSpeakerRight from '../components/AnimatedSpeakerRight/AnimatedSpeakerRight';
-import AnimatedSineWave from '../components/AnimatedSineWave/AnimatedSineWave';
+import AnimatedThreeRoundBurst from '../components/AnimatedThreeRoundBurst/AnimatedThreeRoundBurst';
 
 type Props = {};
 
@@ -26,18 +24,18 @@ const ContentManagement: NextPage<Props> = () => {
   const accordionItems = [
     {
       id: 1,
-      headerText: 'Attract Your Target Audience',
-      bodyText: "Content marketing starts with understanding how your target audience uses search. People developing buying intent ask different questions throughout their customer journey. That tells us where they are at in a potential sales funnel, and the earlier you join them in their journey the better your chances of accelerating their passage through your funnel. Better yet, great content can develop a relationship where audience members view you as a trusted advisor and trading partner. That means our goal is to write well developed highly-targeted and sought after information where your product or service fits naturally.",
+      headerText: 'Attracting Target Audiences',
+      bodyText: "Content marketing starts with understanding how your target audience uses search. People developing buying intent ask different questions throughout their customer journey. That tells us where they are at in a potential sales funnel, and the earlier you join them in their journey the better your chances of accelerating their passage through your funnel. Better yet, great content can develop a relationship where audience members view you as a trusted advisor and trading partner. They become promoters of your products creating exponential awareness of your brand via word of mouth. To achieve this outcome, our goal is to write well developed highly-targeted and sought after information where your product or service fits naturally.",
     },
     {
       id: 2,
-      headerText: 'Build Domain & Brand Authority',
-      bodyText: "we use premium tools like Ahrefs to identify the best opportunities for content backlinks and help our clients acquire them. By analyzing the backlink profiles of competitors and industry leaders, we can identify high-authority websites and publications that are most likely to link to our clients' content. Our team then creates high-quality, informative, and shareable content that is tailored to the interests and needs of the target audience, and pitches it to these high-authority websites for inclusion in their content. Through strategic outreach and relationship-building, we can secure backlinks that not only improve our clients' domain authority and search engine rankings, but also drive traffic and engagement from a wider audience. With our premium tools and expert strategies, we can help our clients build a strong backlink profile that sets them apart from the competition and drives long-term growth for their business.",
+      headerText: 'Building Domain & Brand Authority',
+      bodyText: "we use premium tools like Ahrefs to identify the best opportunities for content backlinks and help our clients acquire them. By analyzing the backlink profiles of competitors and industry leaders, we can identify high-authority websites and publications that are most likely to link to our clients' content. Our team then creates high-quality, informative, and shareable content that is tailored to the interests and needs of the target audience, and pitches it to these high-authority websites for inclusion in their content. Through strategic outreach and relationship-building, we can secure backlinks that not only improve our clients' domain authority and search engine rankings, but also drive traffic and engagement from a wider audience.",
     },
     {
       id: 3,
-      headerText: 'Gain Income From Passive Traffic',
-      bodyText: 'Content marketing can also help you generate leads and sales by creating content that addresses the pain points and challenges of your target audience, and that demonstrates how your product or service can help solve those problems. By creating content that speaks directly to your target audience, you can attract qualified leads and move them through the sales funnel.',
+      headerText: 'Keeping Things Cost Effective & Scalable',
+      bodyText: 'Once you start getting feedback that you have great content in any given medium, that can be repurposed across different media types like infographics, memes, blogs, podcasts and video. We start with the content that has lower production costs like blogs, and scale to higher production formats like video by prioritizing what is provably your most popular content. If keyword research is done correctly and you develop a decent audience to initially promote your content, you will have created a collection of middle-man pages that can be updated and reposted in perpetuity to drive traffic toward your money pages. Those visitors can convert into paying customers passively every month. This creates a multiplier effect that can become amplified when you achieve top ranking search positions for your niche.',
     },
   ];
   
@@ -58,26 +56,26 @@ const ContentManagement: NextPage<Props> = () => {
       id: 3,
       headerText: "How can content marketing help me build an audience?",
       bodyText:
-        "Content marketing can help you build an audience by providing valuable, relevant content that your target audience is searching for. By creating high-quality content that answers their questions and addresses their pain points, you can establish yourself as a thought leader in your industry and attract a loyal following.",
+        "Content marketing can help you build an audience by providing valuable, relevant content that your target audience is searching for. By creating high-quality content that answers their questions and addresses their pain points, you can establish credibility with readers and effectively suggest your products as the recomended solution.",
     },
     {
       id: 4,
       headerText: "How is success gauged in content marketing?",
       bodyText:
-        "Success in content marketing can be gauged by various metrics such as website traffic, social media engagement, email open and click-through rates, leads generated, and sales. By tracking these metrics and analyzing the data, you can make data-driven decisions to optimize your content marketing strategy and achieve better results over time.",
+        "Ultimately, sales are the only metric that truly measures the success of content marketing. However, it's not often that people will go to an online shop, see something they want to buy and then share that product page online for everyone else to see. There's no word of mouth. That's why every business needs a decent blog to help create word of mouth. By writing about highly-searched topics relevant to our business, we can create content worth sharing or linking to. That content gives us page authority and drives engaged viewers back to our sales pages informed and ready to buy.",
     },
     {
       id: 5,
       headerText: "What results can I expect to see from monthly content marketing services?",
       bodyText:
-        "Results from monthly content marketing services vary depending on the complexity of the project and the specific goals of the client, but typically clients see improvement in website traffic, search engine rankings, social media engagement, and lead generation. Our team of experts will work with you to set specific goals and create a content marketing strategy tailored to your unique needs and objectives.",
+        "Results from monthly content marketing services vary depending on the complexity of the project and the specific goals of the client, but typically clients see improvement in website traffic, search engine rankings, social media engagement, lead generation, and sales. Pair this service along with our analytics services to get insights into how well your posts are converting visitors into prospects and eventually paying customers.",
     },
     {
       id: 6,
       headerText: "What is included in the monthly content marketing service?",
       bodyText:
-        "The monthly content marketing service includes ongoing keyword research and analysis, content strategy development, blog post creation and optimization, social media management, and performance reporting. Our team of experts will work closely with you to ensure that your content marketing strategy is aligned with your business goals and tailored to your unique needs.",
-    }
+        "The monthly content marketing service includes ongoing keyword research and analysis, content strategy development, and ghostwriting services. Higher tiers will have additional perks listed.",
+    },
   ];
     
 
@@ -85,14 +83,17 @@ const ContentManagement: NextPage<Props> = () => {
     "Keyword Research & Analysis",
     "Blog Topic Research & Planning",
     "On-Page SEO Optimization",
-    "Basic Content Creation & Publishing",
-    "$100 Built-In Advertising Budget (15% fee on added funds)"
+    "Ghostwriting Services (blogs only)",
+    "Social Network Distribution",
+    "Stock Photos (when available)",
+    "$100 Built-In Advertising Budget (15% fee on added funds)",
     ];
     
     const standardFeatures = [
     "Everything in Basic Tier",
-    "Content Promotion & Distribution",
-    "Customer Education Email Campaigns",
+    "Regular Content Updates",
+    "Community & Group Distribution",
+    "Drip Email Campaigns",
     "Curated Content Art using Stable Diffusion AI",
     "$250 Built-In Advertising Budget (15% fee on added funds)",
     ]
@@ -100,29 +101,30 @@ const ContentManagement: NextPage<Props> = () => {
     const businessFeatures = [
     "Everything in Standard Tier",
     "Backlink Building Strategy & Outreach",
+    "Short-form content using voiceovers, stock footage, and AI video",
     "Instant Access to our Process Automation Pilot Program",
     "$500 Built-In Advertising Budget (no fee on added funds)",
     ]
 
   return (
     <div className="text-secondary bg-primary">
-      <section className="flex text-secondary bg-cover bg-center items-center justify-center bg-no-repeat" style={{ 
+      <section className="flex text-secondary bg-cover bg-center items-center justify-end bg-no-repeat p-10" style={{ 
         backgroundImage: `url(${'money-printer.png'})`,
         height: '92vh'
       }} >
-        <div className="flex flex-col justify-center items-center p-10 bg-black opacity-80 rounded-lg w-1/2">
-            <h1 className="text-4xl font-bold text-center text-opacity-100">Create Content That Draws Traffic Passively</h1>
-            <h2 className="text-xl font-semibold text-center pt-5">Businesses who can't attract an audience are stuck paying for one.</h2>          
-            <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10">Learn more</button>
+        <div className="flex flex-col p-10 bg-black bg-opacity-40 rounded-lg w-1/3">
+          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">Start Making Content That Attracts & Educates</h1>
+          <h2 className="text-xl text-right font-semibold pt-5">Convert more leads as a trusted guide <br /> in your customer's journey</h2>
+          <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button>
         </div>
       </section>
 
-      <section className="problem p-10 bg-white flex flex-col md:flex-row">
-        <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/money-printer.png')] bg-right bg-auto rounded-xl">
+      <section className="problem p-10 bg-white flex flex-col lg:flex-row-reverse lg:justify-center">
+        <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/abandoned-storefront.png')] bg-contain bg-center bg-no-repeat rounded-xl">
         </div>
         <div className="w-full md:w-2/3 p-10 flex md:items-center">
           <div>
-            <h2 className="text-3xl font-bold text-center mb-6 text-black">Printing Relevant High-Quality Content is Like Printing Money</h2>
+            <h2 className="text-3xl font-bold text-center mb-6 text-black">Jack Found Out His Brick & Mortar Business Was Shutdown</h2>
             <Typography className="text-center text-black">
                 When it comes to content marketing, creating high-quality content that resonates with your audience is essential. However, it's not enough to simply produce great content and hope for the best. To truly maximize the impact of your content, you need to ensure that it's optimized for search engines and targeted towards the right keywords. This is where keyword research comes in. By identifying the keywords that your target audience is searching for, you can tailor your content to meet their needs and improve your chances of ranking highly in search results. This, in turn, can drive more traffic to your website and ultimately result in more leads and sales. In essence, printing relevant high-quality content that is optimized for the right keywords is like printing money for your business.            </Typography>
           </div>
@@ -130,7 +132,7 @@ const ContentManagement: NextPage<Props> = () => {
       </section>
 
       <section className="agitate bg-white flex flex-col p-10">
-        <h2 className="text-3xl font-bold text-center mb-10 text-black">Are you dealing with these issues?</h2>
+        <h2 className="text-3xl font-bold text-center mb-10 text-black">The Biggest Challenges Soon Became Clear</h2>
         <div className="flex flex-col md:flex-row items-center md:items-stretch"> {/* added items-center for mobile, items-stretch for desktop */}
           <Card
             imageUrl="speaking-publicly.png"
@@ -161,7 +163,7 @@ const ContentManagement: NextPage<Props> = () => {
 
       <section className="solution p-10 w-full mx-auto bg-white text-black lg:text-center">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">Say Hello to the Crowd: Become a Leading Voice in Your Industry</h2>
+          <h2 className="text-4xl font-bold mb-6">Jack could no longer remain undecisive. He decided to either learn these skills or have the work done on his behalf</h2>
           <div className="flex flex-wrap justify-center items-center">
             <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
               <div className="space-y-4">
@@ -171,8 +173,19 @@ const ContentManagement: NextPage<Props> = () => {
             <div className="w-full md:w-1/2 md:pl-4">
               <div className="bg-[url('/crowd-gathering.png')] bg-center bg-cover rounded-xl">
                 <div className="bg-green-900 p-10 rounded-xl text-center md:text-right bg-opacity-80">
-                  <AnimatedSpeakerRight />
-                  <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Grow a loyal audience that'll become your greatest advocates</h2>
+                    <div className="flex w-full justify-center mt-6 ml-8">
+                        <AnimatedThreeRoundBurst
+                            size={100}
+                            fillColor="none"
+                            strokeColor="white"
+                            strokeWidth={3}
+                            animationDuration={2000}
+                            delayBetweenBursts={300}
+                            viewBox="55 50 100 100"
+                            className="flex justify-center"
+                        />
+                    </div>
+                  <h2 className="text-4xl font-bold mx-4 text-white">Jack gained trust with audience members that became his best promoters. <br /><br />So can you!</h2>
                 </div>
               </div>
             </div>
@@ -199,7 +212,13 @@ const ContentManagement: NextPage<Props> = () => {
 
       <section className="bg-white flex justify-center">
         <div className="w-5/6">
-          <Testimonial />
+          <Testimonial
+            imgSrc="leo.png"
+            rating={5}
+            testimonialText="It never occured to me that I can search for the topics my customers care about most. StepWise Media helped me find out what those topics were and how my products fit for natural referrals that convert to paying clients."
+            authorName="Leo Martinez"
+            authorPosition="Head of Marketing, TurboHeatWeldingTools.com"
+          />
         </div>
       </section>
 

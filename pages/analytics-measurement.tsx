@@ -8,6 +8,7 @@ import Testimonial from '../components/Testimonial/Testimonial';
 import PriceCard from '../components/PriceCard/PriceCard';
 import AnimatedHeartBeat from '../components/AnimatedHeartBeat/AnimatedHeartBeat';
 import NewsletterForm from '../components/NewsletterSignup/NewsletterSignup';
+import AnimatedBarGraphFilled from '../components/AnimatedBarGraphFilled/AnimatedBarGraphFilled';
 
 type Props = {};
 
@@ -104,19 +105,20 @@ const AnalyticsMeasurement: NextPage<Props> = () => {
 
   return (
     <div className="text-secondary bg-primary">
-      <section className="flex text-secondary bg-cover bg-center items-center justify-center bg-no-repeat" style={{ 
+      <section className="flex text-secondary bg-cover bg-center items-center  justify-end bg-no-repeat p-10" style={{ 
         backgroundImage: `url(${'analytics-hero.png'})`,
         height: '92vh'
       }} >
-        <div className="flex flex-col justify-center items-center p-10 bg-black opacity-80 rounded-lg w-1/2">
-          <h1 className="text-4xl font-bold text-center text-opacity-100">Unlock Your Business's Growth Potential with Data-Driven Insights</h1>
-          <h2 className="text-xl font-semibold text-center pt-5">Identify Target Customer Habits and Increase Sales with our Analytics Strategy & Implementation Services</h2>
-          <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10">Learn more</button>
+        <div className="flex flex-col p-10 bg-black bg-opacity-50 rounded-lg w-1/3">
+          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">MOUNTAINS OF USER DATA HOLD HIDDEN VEINS OF GOLD</h1>
+          <h2 className="text-xl text-right font-semibold pt-5">Start giving people what they want,<br /> even though they aren't telling you.</h2>
+          <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button>
         </div>
       </section>
 
       <section className="problem p-10 bg-white flex flex-col md:flex-row">
         <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/confrontation.png')] bg-top bg-auto rounded-xl">
+          <AnimatedBarGraphFilled />
         </div>
         <div className="w-full md:w-2/3 p-10 flex md:items-center">
           <div>
@@ -171,7 +173,7 @@ const AnalyticsMeasurement: NextPage<Props> = () => {
               <div className="bg-[url('/main-street.png')] bg-center bg-cover rounded-xl">
                 <div className="bg-green-900 p-10 rounded-xl text-center md:text-right bg-opacity-80">
                   <AnimatedHeartBeat />
-                  <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Analytics tracks the heartbeat of your business</h2>
+                  <h2 className="text-4xl font-bold mb-6 mt-10 text-white">Start tracking the heartbeat of your business today</h2>
                 </div>
               </div>
             </div>
@@ -192,7 +194,13 @@ const AnalyticsMeasurement: NextPage<Props> = () => {
 
       <section className="bg-white flex justify-center">
         <div className="w-5/6">
-          <Testimonial />
+          <Testimonial 
+            imgSrc="leo.png"
+            rating={5}
+            testimonialText="StepWise Media helped me learn more about modern marketing tools and techniques than I ever knew. They did all the work for me, so I had all the answers I needed without dedicating my time and labor. Highly recommend!"
+            authorName="Leo Martinez"
+            authorPosition="Head of Marketing, TurboHeatWeldingTools.com"
+          />
         </div>
       </section>
 
