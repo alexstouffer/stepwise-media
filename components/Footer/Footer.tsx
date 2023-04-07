@@ -38,7 +38,7 @@ export function Footer() {
             ))}
             </ul>
           </div>
-          <div className="mt-8 w-full md:mt-0 md:w-auto">
+          {/* <div className="mt-8 w-full md:mt-0 md:w-auto">
             <Typography variant="h6" color="white" className="mb-3">
               Follow Us:
             </Typography>
@@ -78,7 +78,7 @@ export function Footer() {
                 Google Play
               </Button>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mt-16 flex flex-wrap items-center justify-center gap-y-4 gap-x-8 border-t border-gray-700 py-7 md:justify-between">
           <Typography

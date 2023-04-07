@@ -51,14 +51,15 @@ label="Analytics Measurement"
 url="/analytics-measurement"
 
 />
-{/* <NavItem
+<NavItem
 icon={<CodeBracketSquareIcon className="h-5 w-5" />}
 label="Web Development"
 url="/web-development"
-/> */}
+/>
 <NavItem
 icon={<Square3Stack3DIcon className="h-5 w-5" />}
 label="Blog"
+url="/blog"
 />
 </ul>
 );
@@ -139,22 +140,6 @@ return (
         Sign In
         </Button>
         </a>
-    <IconButton
-        size="sm"
-        variant="text"
-        color="white"
-        onClick={handleOpen}
-        className="ml-auto inline-block lg:hidden"
-        nonce={undefined} 
-        onResize={undefined} 
-        onResizeCapture={undefined}
-        >
-        {open ? (
-        <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-        ) : (
-        <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-        )}
-    </IconButton>
 </div>
 </div>
 <MobileNav open={open}>

@@ -110,8 +110,8 @@ const AnalyticsMeasurement: NextPage<Props> = () => {
         height: '92vh'
       }} >
         <div className="flex flex-col p-10 bg-black bg-opacity-50 rounded-lg w-1/3">
-          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">MOUNTAINS OF USER DATA HOLD HIDDEN VEINS OF GOLD</h1>
-          <h2 className="text-xl text-right font-semibold pt-5">Start giving people what they want,<br /> even though they aren't telling you.</h2>
+          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">USER DATA MOUNTAINS HOLD HIDDEN VEINS OF GOLD</h1>
+          <h2 className="text-xl text-right font-semibold pt-5">Discover what target customers want,<br /> even when they aren't telling you.</h2>
           <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button>
         </div>
       </section>
