@@ -1,16 +1,45 @@
 import { useEffect, useState } from 'react'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { ArrowPathIcon } from '@heroicons/react/24/solid'
-import { Breadcrumbs, Button, Switch, Typography } from "@material-tailwind/react";
+import { Breadcrumbs, Button, Switch, Typography } from "@material-tailwind/react"
+import * as contentful from "contentful"
 
-interface BlogProps {
-  posts: {
+interface Post {
     title: string
     body: string
-  }[]
+    preview: string
+    author: string
+    id: string
+    featuredImage: {
+      fields: {
+        file: {
+          url: string
+        },
+        title: string
+      }
+  }
+  sys: {
+    id: string
+  }
 }
 
+
+interface BlogProps {
+  posts: Post[]
+}
+
+interface ClientProps {
+  space: string
+  accessToken: string
+}
+
+const client = contentful.createClient({
+  space: process.env.CONTENTFUL_SPACE_ID as string,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+});
+
 const Blog = ({ posts }: BlogProps) => {
+  console.log(posts);
   const [displayedPosts, setDisplayedPosts] = useState(9)
   const [loading, setLoading] = useState(false)
   const [infiniteScroll, setInfiniteScroll] = useState(true)
@@ -66,16 +95,17 @@ const Blog = ({ posts }: BlogProps) => {
         </div>
       </div>
       <div className="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-10">
-        {posts.slice(0, displayedPosts).map((post, index) => (
-          <div className="bg-white rounded-lg shadow" key={post.title}>
+        {posts.slice(0, displayedPosts).map((post) => 
+        (
+          <div className="bg-white rounded-lg shadow" key={post.id}>
             <img
               className="h-48 w-full object-cover rounded-t-lg"
-              src="migraine.png"
-              alt="migraine"
+              src={post.featuredImage.fields.file.url}
+              alt={post.featuredImage.fields.title}
             />
             <div className="p-6">
               <h2 className="text-lg font-medium mb-4">{post.title}</h2>
-              <p className="text-gray-600">{post.body}</p>
+              <p className="text-gray-600">{post.preview}</p>
             </div>
           </div>
         ))}
@@ -97,10 +127,11 @@ const Blog = ({ posts }: BlogProps) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const posts = await res.json()
-  return { props: { posts } }
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
+  const { items } = await client.getEntries<Post>({ content_type: "post" })
+  const posts = items.map(item => item.fields)
+  console.log("posts", posts)
+  return { props: { posts }, revalidate: 1 }
 }
 
 export default Blog

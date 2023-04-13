@@ -107,7 +107,7 @@ const AnalyticsMeasurement: NextPage<Props> = () => {
     <div className="text-secondary bg-primary">
       <section className="flex text-secondary bg-cover bg-center items-center  justify-end bg-no-repeat p-10" style={{ 
         backgroundImage: `url(${'analytics-hero.png'})`,
-        height: '92vh'
+        height: '84vh'
       }} >
         <div className="flex flex-col p-10 bg-black bg-opacity-50 rounded-lg w-1/3">
           <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">USER DATA MOUNTAINS HOLD HIDDEN VEINS OF GOLD</h1>

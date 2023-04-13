@@ -102,14 +102,14 @@ const WebDevelopment: NextPage<Props> = () => {
 
   return (
     <div className="text-secondary bg-primary">
-      <section className="flex text-secondary bg-cover bg-center items-center justify-center bg-no-repeat" style={{ 
-        backgroundImage: `url(${'money-printer.png'})`,
-        height: '92vh'
+      <section className="flex text-secondary bg-cover bg-center items-center justify-end bg-no-repeat p-10" style={{ 
+        backgroundImage: `url(${'modern-devices.png'})`,
+        height: '84vh'
       }} >
-        <div className="flex flex-col justify-center items-center p-10 bg-black opacity-80 rounded-lg w-1/2">
-            <h1 className="text-4xl font-bold text-center text-opacity-100">Create Content That Draws Traffic Passively</h1>
-            <h2 className="text-xl font-semibold text-center pt-5">Businesses who can't attract an audience are stuck paying for one.</h2>          
-            <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10">Learn more</button>
+        <div className="flex flex-col p-10 bg-black bg-opacity-40 rounded-lg w-1/3">
+          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">Social Media Can Give You Reach or Take it Away</h1>
+          <h2 className="text-xl text-right font-semibold pt-5">Here's 5 other reasons why modern functional websites are the foundation your business should built on</h2>
+          <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button>
         </div>
       </section>
 
@@ -118,7 +118,7 @@ const WebDevelopment: NextPage<Props> = () => {
         </div>
         <div className="w-full md:w-2/3 p-10 flex md:items-center">
           <div>
-            <h2 className="text-3xl font-bold text-center mb-6 text-black">Printing Relevant High-Quality Content is Like Printing Money</h2>
+            <h2 className="text-3xl font-bold text-center mb-6 text-black">Jack Worth Saw That 'Internet People' Were Making Good Money, But How Could He Appeal to Them?</h2>
             <Typography className="text-center text-black">
                 When it comes to content marketing, creating high-quality content that resonates with your audience is essential. However, it's not enough to simply produce great content and hope for the best. To truly maximize the impact of your content, you need to ensure that it's optimized for search engines and targeted towards the right keywords. This is where keyword research comes in. By identifying the keywords that your target audience is searching for, you can tailor your content to meet their needs and improve your chances of ranking highly in search results. This, in turn, can drive more traffic to your website and ultimately result in more leads and sales. In essence, printing relevant high-quality content that is optimized for the right keywords is like printing money for your business.            </Typography>
           </div>
@@ -129,24 +129,24 @@ const WebDevelopment: NextPage<Props> = () => {
         <h2 className="text-3xl font-bold text-center mb-10 text-black">Are you dealing with these issues?</h2>
         <div className="flex flex-col md:flex-row items-center md:items-stretch"> {/* added items-center for mobile, items-stretch for desktop */}
           <Card
-            imageUrl="speaking-publicly.png"
-            title="Discomfort Speaking Publicly"
+            imageUrl="paper-labor-haul.png"
+            title="Limited Labor Capacity"
             description="You like people but you're not keen on addressing a whole crowd of them. Instead of considering what value you can demonstrate to people, you dwell on thinking 'What if I make a fool of myself? Then nobody will want to buy from me!'"
             className="mb-6 md:mb-0 md:mr-6 h-full"
             dialogueHeader="Focus your efforts for maximum impact"
             dialogueBody="We'll help you identify the tactics that are most likely to work for your business, and provide guidance on how to optimize them for better results. By focusing your efforts on the right strategies and tactics, you can improve your ROI and get the results you're looking for."
             />
           <Card
-            imageUrl="hourglass.png"
-            title="Advertising Dollars Burned"
+            imageUrl="spaghetti-code-incarnate.png"
+            title="Lack of Developer Expertise"
             description="It seems like the only way to get people to view your pages are to pay for ads, but as soon as you pull them traffic stops entirely. The cycle must be rigged."
             className="mb-6 md:mb-0 md:mx-6 h-full"
             dialogueHeader="There's a better way to take aim"
             dialogueBody="We can help you use data to better understand your customers and improve your targeting strategy. Our team of experts will work with you to identify the key metrics that matter to your business and provide insights that can help you optimize your campaigns and increase conversions."
           />
           <Card
-            imageUrl="uneducated-viewership.png"
-            title="Uneducated Viewership"
+            imageUrl="cheap-suits.png"
+            title="Standing Out Like a Cheap Suit"
             description="You know your craft and perform it skillfully. However, the people who view your offers don't know the valuable that you're offering. They don't seem to be very engaged."
             className="mb-6 md:mb-0 md:ml-6 h-full"
             dialogueHeader="Don't waste another minute on ineffective marketing"

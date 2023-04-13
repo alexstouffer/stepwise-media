@@ -109,13 +109,13 @@ const ContentManagement: NextPage<Props> = () => {
   return (
     <div className="text-secondary bg-primary">
       <section className="flex text-secondary bg-cover bg-center items-center justify-end bg-no-repeat p-10" style={{ 
-        backgroundImage: `url(${'money-printer.png'})`,
-        height: '92vh'
+        backgroundImage: `url(${'cable-decline.png'})`,
+        height: '84vh'
       }} >
         <div className="flex flex-col p-10 bg-black bg-opacity-40 rounded-lg w-1/3">
-          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">Start Making Content That Attracts & Educates</h1>
+          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">Attract Clients & Educate Audiences Consistently</h1>
           <h2 className="text-xl text-right font-semibold pt-5">Convert more leads as a trusted guide <br /> in your customer's journey</h2>
-          <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button>
+          {/* <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button> */}
         </div>
       </section>
 
@@ -136,7 +136,7 @@ const ContentManagement: NextPage<Props> = () => {
         <div className="flex flex-col md:flex-row items-center md:items-stretch"> {/* added items-center for mobile, items-stretch for desktop */}
           <Card
             imageUrl="speaking-publicly.png"
-            title="Discomfort Speaking Publicly"
+            title="Credible Content"
             description="You like people but you're not keen on addressing a whole crowd of them. Instead of considering what value you can demonstrate to people, you dwell on thinking 'What if I make a fool of myself? Then nobody will want to buy from me!'"
             className="mb-6 md:mb-0 md:mr-6 h-full"
             dialogueHeader="Focus your efforts for maximum impact"
@@ -152,7 +152,7 @@ const ContentManagement: NextPage<Props> = () => {
           />
           <Card
             imageUrl="uneducated-viewership.png"
-            title="Uneducated Viewership"
+            title="Target Audience Reach"
             description="You know your craft and perform it skillfully. However, the people who view your offers don't know the valuable that you're offering. They don't seem to be very engaged."
             className="mb-6 md:mb-0 md:ml-6 h-full"
             dialogueHeader="Don't waste another minute on ineffective marketing"
