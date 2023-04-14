@@ -1,36 +1,37 @@
-import { useEffect, useState } from 'react'
-import { GetStaticProps } from 'next'
-import { ArrowPathIcon } from '@heroicons/react/24/solid'
-import { Breadcrumbs, Button, Switch, Typography } from "@material-tailwind/react"
-import * as contentful from "contentful"
+import { useEffect, useState } from 'react';
+import { GetStaticProps } from 'next';
+import Link from 'next/link';
+import { ArrowPathIcon } from '@heroicons/react/24/solid';
+import { Breadcrumbs, Button, Switch, Typography } from '@material-tailwind/react';
+import * as contentful from 'contentful';
 
-interface Post {
-    title: string
-    body: string
-    preview: string
-    author: string
-    id: string
-    featuredImage: {
-      fields: {
-        file: {
-          url: string
-        },
-        title: string
-      }
-  }
+export interface Post {
+  title: string;
+  body: string;
+  preview: string;
+  author: string;
+  id: string;
+  slug: string;
+  featuredImage: {
+    fields: {
+      file: {
+        url: string;
+      };
+      title: string;
+    };
+  };
   sys: {
-    id: string
-  }
+    id: string;
+  };
 }
 
-
 interface BlogProps {
-  posts: Post[]
+  posts: Post[];
 }
 
 interface ClientProps {
-  space: string
-  accessToken: string
+  space: string;
+  accessToken: string;
 }
 
 const client = contentful.createClient({
@@ -39,36 +40,39 @@ const client = contentful.createClient({
 });
 
 const Blog = ({ posts }: BlogProps) => {
-  console.log(posts);
-  const [displayedPosts, setDisplayedPosts] = useState(9)
-  const [loading, setLoading] = useState(false)
-  const [infiniteScroll, setInfiniteScroll] = useState(true)
+  const [displayedPosts, setDisplayedPosts] = useState(9);
+  const [loading, setLoading] = useState(false);
+  const [infiniteScroll, setInfiniteScroll] = useState(true);
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight
-      const scrollTop = document.documentElement.scrollTop
-      const clientHeight = document.documentElement.clientHeight
-      const footerHeight = document.querySelector('footer')?.offsetHeight || 0
-      const navHeight = document.querySelector('nav')?.offsetHeight || 0
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const clientHeight = document.documentElement.clientHeight;
+      const footerHeight = document.querySelector('footer')?.offsetHeight || 0;
+      const navHeight = document.querySelector('nav')?.offsetHeight || 0;
 
       if (infiniteScroll && scrollTop + clientHeight >= scrollHeight - footerHeight) {
-        setLoading(true)
+        setLoading(true);
         setTimeout(() => {
-          setDisplayedPosts(displayedPosts + 9)
-          setLoading(false)
-        }, 1000)
+          if (displayedPosts >= posts.length) {
+            setInfiniteScroll(false);
+          } else {
+            setDisplayedPosts(displayedPosts + 9);
+          }
+          setLoading(false);
+        }, 1000);
       }
-    }
+    };
 
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll);
 
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [displayedPosts, infiniteScroll])
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [displayedPosts, infiniteScroll]);
 
   const loadMorePosts = () => {
-    setDisplayedPosts(displayedPosts + 9)
-  }
+    setDisplayedPosts(displayedPosts + 9);
+  };
 
   return (
     <div className="flex flex-col">
@@ -95,23 +99,26 @@ const Blog = ({ posts }: BlogProps) => {
         </div>
       </div>
       <div className="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-10">
-        {posts.slice(0, displayedPosts).map((post) => 
-        (
-          <div className="bg-white rounded-lg shadow" key={post.id}>
-            <img
-              className="h-48 w-full object-cover rounded-t-lg"
-              src={post.featuredImage.fields.file.url}
-              alt={post.featuredImage.fields.title}
-            />
-            <div className="p-6">
-              <h2 className="text-lg font-medium mb-4">{post.title}</h2>
-              <p className="text-gray-600">{post.preview}</p>
-            </div>
-          </div>
+        {posts.slice(0, displayedPosts).map((post) => (
+          <Link href={`/blog/${post.slug}`}>
+              <div className="post-container bg-white rounded-lg shadow" key={post.id}>
+                <img
+                  className="h-48 w-full object-cover rounded-t-lg"
+                  src={post.featuredImage.fields.file.url}
+                  alt={post.featuredImage.fields.title}
+                />
+                <div className="p-6">
+                  <h2 className="text-lg font-medium mb-4">{post.title}</h2>
+                  <p className="text-gray-600">{post.preview}</p>
+                </div>
+              </div>
+          </Link>
         ))}
         {!infiniteScroll && displayedPosts < posts.length && (
           <div className="col-span-full flex items-center justify-center my-8">
-            <Button color="green" onClick={loadMorePosts} nonce={undefined} onResize={undefined} onResizeCapture={undefined}>Load More Posts</Button>
+            <Button color="green" onClick={loadMorePosts} nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
+              Load More Posts
+            </Button>
           </div>
         )}
         {loading && (
@@ -123,15 +130,19 @@ const Blog = ({ posts }: BlogProps) => {
           </div>
         )}
       </div>
+      {displayedPosts >= posts.length && (
+        <p className="text-center font-bold text-gray-500 py-8"></p>
+      )}
     </div>
   )
 }
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const { items } = await client.getEntries<Post>({ content_type: "post" })
-  const posts = items.map(item => item.fields)
-  console.log("posts", posts)
-  return { props: { posts }, revalidate: 1 }
-}
+  const { items } = await client.getEntries<Post>({ content_type: "post" });
+  const posts = items.map((item) => {
+    return { ...item.fields, id: item.sys.id};
+  });
+  return { props: { posts }, revalidate: 1 };
+};
 
 export default Blog

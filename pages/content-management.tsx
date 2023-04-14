@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NextPage } from 'next';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Accordion from '../components/Accordion/Accordion';
 import Card from '../components/Card/Card';
@@ -107,136 +108,143 @@ const ContentManagement: NextPage<Props> = () => {
     ]
 
   return (
-    <div className="text-secondary bg-primary">
-      <section className="flex text-secondary bg-cover bg-center items-center justify-end bg-no-repeat p-10" style={{ 
-        backgroundImage: `url(${'cable-decline.png'})`,
-        height: '84vh'
-      }} >
-        <div className="flex flex-col p-10 bg-black bg-opacity-40 rounded-lg w-1/3">
-          <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">Attract Clients & Educate Audiences Consistently</h1>
-          <h2 className="text-xl text-right font-semibold pt-5">Convert more leads as a trusted guide <br /> in your customer's journey</h2>
-          {/* <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button> */}
-        </div>
-      </section>
+    <div>
+      <Head>
+        <title>Content Management | StepWise Media</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-      <section className="problem p-10 bg-white flex flex-col lg:flex-row-reverse lg:justify-center">
-        <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/abandoned-storefront.png')] bg-contain bg-center bg-no-repeat rounded-xl">
-        </div>
-        <div className="w-full md:w-2/3 p-10 flex md:items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-center mb-6 text-black">Jack Found Out His Brick & Mortar Business Was Shutdown</h2>
-            <Typography className="text-center text-black">
-                When it comes to content marketing, creating high-quality content that resonates with your audience is essential. However, it's not enough to simply produce great content and hope for the best. To truly maximize the impact of your content, you need to ensure that it's optimized for search engines and targeted towards the right keywords. This is where keyword research comes in. By identifying the keywords that your target audience is searching for, you can tailor your content to meet their needs and improve your chances of ranking highly in search results. This, in turn, can drive more traffic to your website and ultimately result in more leads and sales. In essence, printing relevant high-quality content that is optimized for the right keywords is like printing money for your business.            </Typography>
+      <main className="text-secondary bg-primary">
+        <section className="flex text-secondary bg-cover bg-center items-center justify-end bg-no-repeat p-10" style={{ 
+          backgroundImage: `url(${'cable-decline.png'})`,
+          height: '84vh'
+        }} >
+          <div className="flex flex-col p-10 bg-black bg-opacity-40 rounded-lg w-1/3">
+            <h1 className="text-5xl font-bold text-right text-opacity-100 text-uppercase">Attract Clients & Educate Audiences Consistently</h1>
+            <h2 className="text-xl text-right font-semibold pt-5">Convert more leads as a trusted guide <br /> in your customer's journey</h2>
+            {/* <button onClick={() => router.push('/ga')} className="bg-secondary rounded-lg text-black px-10 py-3 mt-10 max-width-50">Learn more</button> */}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="agitate bg-white flex flex-col p-10">
-        <h2 className="text-3xl font-bold text-center mb-10 text-black">The Biggest Challenges Soon Became Clear</h2>
-        <div className="flex flex-col md:flex-row items-center md:items-stretch"> {/* added items-center for mobile, items-stretch for desktop */}
-          <Card
-            imageUrl="speaking-publicly.png"
-            title="Credible Content"
-            description="You like people but you're not keen on addressing a whole crowd of them. Instead of considering what value you can demonstrate to people, you dwell on thinking 'What if I make a fool of myself? Then nobody will want to buy from me!'"
-            className="mb-6 md:mb-0 md:mr-6 h-full"
-            dialogueHeader="Focus your efforts for maximum impact"
-            dialogueBody="We'll help you identify the tactics that are most likely to work for your business, and provide guidance on how to optimize them for better results. By focusing your efforts on the right strategies and tactics, you can improve your ROI and get the results you're looking for."
-            />
-          <Card
-            imageUrl="hourglass.png"
-            title="Advertising Dollars Siphoned"
-            description="It seems like the only way to get people to view your pages are to pay for ads, but as soon as you pull them traffic stops entirely. The cycle must be rigged."
-            className="mb-6 md:mb-0 md:mx-6 h-full"
-            dialogueHeader="There's a better way to take aim"
-            dialogueBody="We can help you use data to better understand your customers and improve your targeting strategy. Our team of experts will work with you to identify the key metrics that matter to your business and provide insights that can help you optimize your campaigns and increase conversions."
-          />
-          <Card
-            imageUrl="uneducated-viewership.png"
-            title="Target Audience Reach"
-            description="You know your craft and perform it skillfully. However, the people who view your offers don't know the valuable that you're offering. They don't seem to be very engaged."
-            className="mb-6 md:mb-0 md:ml-6 h-full"
-            dialogueHeader="Don't waste another minute on ineffective marketing"
-            dialogueBody="Our team of experts will work with you to develop a comprehensive digital marketing strategy that's tailored to your business. By using data to inform our decisions, we'll help you make the most of your marketing budget and get the results you're looking for. Say goodbye to wasted time and money and hello to a smarter, more effective marketing approach."
-          />
-        </div>
-      </section>
-
-      <section className="solution p-10 w-full mx-auto bg-white text-black lg:text-center">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">Jack could no longer remain undecisive. He decided to either learn these skills or have the work done on his behalf</h2>
-          <div className="flex flex-wrap justify-center items-center">
-            <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
-              <div className="space-y-4">
-                <Accordion items={accordionItems} />
-              </div>
+        <section className="problem p-10 bg-white flex flex-col lg:flex-row-reverse lg:justify-center">
+          <div className="w-full md:w-1/3 flex items-center justify-center p-10 bg-[url('/abandoned-storefront.png')] bg-contain bg-center bg-no-repeat rounded-xl">
+          </div>
+          <div className="w-full md:w-2/3 p-10 flex md:items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-center mb-6 text-black">Jack Found Out His Brick & Mortar Business Was Shutdown</h2>
+              <Typography className="text-center text-black">
+                  When it comes to content marketing, creating high-quality content that resonates with your audience is essential. However, it's not enough to simply produce great content and hope for the best. To truly maximize the impact of your content, you need to ensure that it's optimized for search engines and targeted towards the right keywords. This is where keyword research comes in. By identifying the keywords that your target audience is searching for, you can tailor your content to meet their needs and improve your chances of ranking highly in search results. This, in turn, can drive more traffic to your website and ultimately result in more leads and sales. In essence, printing relevant high-quality content that is optimized for the right keywords is like printing money for your business.            </Typography>
             </div>
-            <div className="w-full md:w-1/2 md:pl-4">
-              <div className="bg-[url('/crowd-gathering.png')] bg-center bg-cover rounded-xl">
-                <div className="bg-green-900 p-10 rounded-xl text-center md:text-right bg-opacity-80">
-                    <div className="flex w-full justify-center mt-6 ml-8">
-                        <AnimatedThreeRoundBurst
-                            size={100}
-                            fillColor="none"
-                            strokeColor="white"
-                            strokeWidth={3}
-                            animationDuration={2000}
-                            delayBetweenBursts={300}
-                            viewBox="55 50 100 100"
-                            className="flex justify-center"
-                        />
-                    </div>
-                  <h2 className="text-4xl font-bold mx-4 text-white">Jack gained trust with audience members that became his best promoters. <br /><br />So can you!</h2>
+          </div>
+        </section>
+
+        <section className="agitate bg-white flex flex-col p-10">
+          <h2 className="text-3xl font-bold text-center mb-10 text-black">The Biggest Challenges Soon Became Clear</h2>
+          <div className="flex flex-col md:flex-row items-center md:items-stretch"> {/* added items-center for mobile, items-stretch for desktop */}
+            <Card
+              imageUrl="speaking-publicly.png"
+              title="Credible Content"
+              description="You like people but you're not keen on addressing a whole crowd of them. Instead of considering what value you can demonstrate to people, you dwell on thinking 'What if I make a fool of myself? Then nobody will want to buy from me!'"
+              className="mb-6 md:mb-0 md:mr-6 h-full"
+              dialogueHeader="Focus your efforts for maximum impact"
+              dialogueBody="We'll help you identify the tactics that are most likely to work for your business, and provide guidance on how to optimize them for better results. By focusing your efforts on the right strategies and tactics, you can improve your ROI and get the results you're looking for."
+              />
+            <Card
+              imageUrl="hourglass.png"
+              title="Advertising Dollars Siphoned"
+              description="It seems like the only way to get people to view your pages are to pay for ads, but as soon as you pull them traffic stops entirely. The cycle must be rigged."
+              className="mb-6 md:mb-0 md:mx-6 h-full"
+              dialogueHeader="There's a better way to take aim"
+              dialogueBody="We can help you use data to better understand your customers and improve your targeting strategy. Our team of experts will work with you to identify the key metrics that matter to your business and provide insights that can help you optimize your campaigns and increase conversions."
+            />
+            <Card
+              imageUrl="uneducated-viewership.png"
+              title="Target Audience Reach"
+              description="You know your craft and perform it skillfully. However, the people who view your offers don't know the valuable that you're offering. They don't seem to be very engaged."
+              className="mb-6 md:mb-0 md:ml-6 h-full"
+              dialogueHeader="Don't waste another minute on ineffective marketing"
+              dialogueBody="Our team of experts will work with you to develop a comprehensive digital marketing strategy that's tailored to your business. By using data to inform our decisions, we'll help you make the most of your marketing budget and get the results you're looking for. Say goodbye to wasted time and money and hello to a smarter, more effective marketing approach."
+            />
+          </div>
+        </section>
+
+        <section className="solution p-10 w-full mx-auto bg-white text-black lg:text-center">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6">Jack could no longer remain undecisive. He decided to either learn these skills or have the work done on his behalf</h2>
+            <div className="flex flex-wrap justify-center items-center">
+              <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
+                <div className="space-y-4">
+                  <Accordion items={accordionItems} />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 md:pl-4">
+                <div className="bg-[url('/crowd-gathering.png')] bg-center bg-cover rounded-xl">
+                  <div className="bg-green-900 p-10 rounded-xl text-center md:text-right bg-opacity-80">
+                      <div className="flex w-full justify-center mt-6 ml-8">
+                          <AnimatedThreeRoundBurst
+                              size={100}
+                              fillColor="none"
+                              strokeColor="white"
+                              strokeWidth={3}
+                              animationDuration={2000}
+                              delayBetweenBursts={300}
+                              viewBox="55 50 100 100"
+                              className="flex justify-center"
+                          />
+                      </div>
+                    <h2 className="text-4xl font-bold mx-4 text-white">Jack gained trust with audience members that became his best promoters. <br /><br />So can you!</h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="tools p-10 w-full mx-auto bg-white text-black lg:text-center">
-        <div>
-            <h2 className="text-4xl font-bold mb-6"></h2>
-        </div>
-      </section>
+        <section className="tools p-10 w-full mx-auto bg-white text-black lg:text-center">
+          <div>
+              <h2 className="text-4xl font-bold mb-6"></h2>
+          </div>
+        </section>
 
-      <section className="pricing bg-white">
-        <h2 className="text-3xl font-bold text-center mb-2 text-black">Choose Your Plan</h2>
-        <h4 className="text-md font-italic text-center text-black">No long term contracts. Cancel at any time.</h4>
-        <div className="flex flex-wrap justify-center p-10 space-x-4">
-          <PriceCard title="Basic" monthlyFee={1000} features={basicFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
-          <PriceCard title="Standard" monthlyFee={2000} features={standardFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
-          <PriceCard title="Business" monthlyFee={4000} features={businessFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
-        </div>
-        <h4 className="text-md font-italic text-center text-black text-bold">Act now to secure your spot - client availability is limited!</h4>
-      </section>
+        <section className="pricing bg-white">
+          <h2 className="text-3xl font-bold text-center mb-2 text-black">Choose Your Plan</h2>
+          <h4 className="text-md font-italic text-center text-black">No long term contracts. Cancel at any time.</h4>
+          <div className="flex flex-wrap justify-center p-10 space-x-4">
+            <PriceCard title="Basic" monthlyFee={1000} features={basicFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
+            <PriceCard title="Standard" monthlyFee={2000} features={standardFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
+            <PriceCard title="Business" monthlyFee={4000} features={businessFeatures} className="min-h-full w-80 flex-shrink-0 mb-3 " />
+          </div>
+          <h4 className="text-md font-italic text-center text-black text-bold">Act now to secure your spot - client availability is limited!</h4>
+        </section>
 
-      <section className="bg-white flex justify-center">
-        <div className="w-5/6">
-          <Testimonial
-            imgSrc="leo.png"
-            rating={5}
-            testimonialText="It never occured to me that I can search for the topics my customers care about most. StepWise Media helped me find out what those topics were and how my products fit for natural referrals that convert to paying clients."
-            authorName="Leo Martinez"
-            authorPosition="Head of Marketing, TurboHeatWeldingTools.com"
-          />
-        </div>
-      </section>
+        <section className="bg-white flex justify-center">
+          <div className="w-5/6">
+            <Testimonial
+              imgSrc="leo.png"
+              rating={5}
+              testimonialText="It never occured to me that I can search for the topics my customers care about most. StepWise Media helped me find out what those topics were and how my products fit for natural referrals that convert to paying clients."
+              authorName="Leo Martinez"
+              authorPosition="Head of Marketing, TurboHeatWeldingTools.com"
+            />
+          </div>
+        </section>
 
-      <section className="faqs p-10 w-full mx-auto bg-white text-black">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-          <div className="border-t border-b border-gray-200 py-8">
-            <div className="space-y-4">
-              <Accordion items={faqs} />
+        <section className="faqs p-10 w-full mx-auto bg-white text-black">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+            <div className="border-t border-b border-gray-200 py-8">
+              <div className="space-y-4">
+                <Accordion items={faqs} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-white p-10 mx-auto flex justify-center">
-        <NewsletterForm />
-      </section>
+        <section className="bg-white p-10 mx-auto flex justify-center">
+          <NewsletterForm />
+        </section>
 
+      </main>
     </div>
   );
 };
