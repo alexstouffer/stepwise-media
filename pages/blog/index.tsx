@@ -4,22 +4,17 @@ import Link from 'next/link';
 import { ArrowPathIcon } from '@heroicons/react/24/solid';
 import { Breadcrumbs, Button, Switch, Typography } from '@material-tailwind/react';
 import * as contentful from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 export interface Post {
   title: string;
-  body: string;
+  body: Document;
   preview: string;
-  author: string;
+  author: { fields: { name: string } }[];
   id: string;
+  featuredImage: contentful.Asset;
   slug: string;
-  featuredImage: {
-    fields: {
-      file: {
-        url: string;
-      };
-      title: string;
-    };
-  };
+  publishDate: string;
   sys: {
     id: string;
   };
