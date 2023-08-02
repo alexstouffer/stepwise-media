@@ -30,8 +30,14 @@ const PostPage = ({ post }: PostPageProps) => {
       alt={post.featuredImage.fields.title}
     />
     <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-    <p className="text-gray-500">
-        By {post.author[0].fields.name} on {new Date(post.publishDate).toLocaleDateString()}
+    <p className="text-gray-500 pb-10">
+      By {post.author.length > 0 ? post.author[0].fields.name : 'StepWise Staff'}
+      {post.publishDate && !isNaN(new Date(post.publishDate).getTime()) ? (
+        <>
+          {' '}
+          on {new Date(post.publishDate).toLocaleDateString()}
+        </>
+      ) : null}
     </p>
     <div className="prose max-w-none">{documentToReactComponents(post.body)}</div>
   </div>
@@ -54,7 +60,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({ params }) 
 
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
-  const apiUrl = `https://cdn.contentful.com/spaces/${spaceId}/entries?fields.slug=${params.slug}&content_type=post&select=fields,sys&access_token=${accessToken}`;
+  const apiUrl = `https://cdn.contentful.com/spaces/${spaceId}/entries?fields.slug=${params.slug}&content_type=post&select=fields.title,fields.slug,fields.preview,fields.body,fields.featuredImage,fields.author,fields.publishDate,sys&include=2&access_token=${accessToken}`;
 
   const response = await fetch(apiUrl);
   const data = await response.json();
@@ -68,6 +74,8 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({ params }) 
   const assetUrl = `https://cdn.contentful.com/spaces/${spaceId}/assets/${assetId}?access_token=${accessToken}`;
   const assetResponse = await fetch(assetUrl);
   const assetData = await assetResponse.json();
+  const rawAuthorData = data.items[0]?.fields?.author || [];
+  console.log("data.sys", data.items);
 
   const post: Post = {
     ...rawPost,
@@ -79,7 +87,14 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({ params }) 
         title: assetData.fields.title,
       },
     },
-  };
+    author: rawAuthorData.map((author: any) => ({
+      fields: {
+        name: author.fields.name,
+        // Add other author fields here as needed
+      },
+    })),
+    publishDate: data.items[0]?.fields?.publishDate || '', // Add the publishDate field
+};
 
   return {
     props: { post },

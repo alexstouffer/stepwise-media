@@ -40,16 +40,16 @@ return (
 function NavList() {
 return (
 <ul className="mb-4 mt-2 flex flex-col gap-3 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
-<NavItem
-icon={<RocketLaunchIcon className="h-5 w-5" />}
-label="Content Management"
-url="/content-management"
-/>
-<NavItem
+{/* <NavItem
 icon={<PuzzlePieceIcon className="h-5 w-5" />}
 label="Analytics Measurement"
 url="/analytics-measurement"
 
+/> */}
+<NavItem
+icon={<RocketLaunchIcon className="h-5 w-5" />}
+label="SEO Management"
+url="/content-management"
 />
 <NavItem
 icon={<CodeBracketSquareIcon className="h-5 w-5" />}
@@ -96,10 +96,10 @@ return (
         <img src="/logo-stepwise-media.png" alt="logo" width="200" />
     </div>
 </Typography>
-<div className="hidden lg:block">
-<NavList />
-</div>
-<div>
+<div className="flex justify-between">
+        <div className="hidden lg:block pr-10">
+        <NavList />
+        </div>
         <a href="/register">
         <Button
         color="white"
