@@ -31,7 +31,7 @@ const PostPage = ({ post }: PostPageProps) => {
     />
     <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
     <p className="text-gray-500 pb-10">
-      By {post.author.length > 0 ? post.author[0].fields.name : 'StepWise Staff'}
+      {/* By {post.author.length > 0 ? post.author[0].fields.name : 'StepWise Staff'} */}
       {post.publishDate && !isNaN(new Date(post.publishDate).getTime()) ? (
         <>
           {' '}
@@ -87,12 +87,12 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({ params }) 
         title: assetData.fields.title,
       },
     },
-    author: rawAuthorData.map((author: any) => ({
-      fields: {
-        name: author.fields.name,
-        // Add other author fields here as needed
-      },
-    })),
+    // author: rawAuthorData.map((author: any) => ({
+    //   fields: {
+    //     name: author.fields.name,
+    //     // Add other author fields here as needed
+    //   },
+    // })),
     publishDate: data.items[0]?.fields?.publishDate || '', // Add the publishDate field
 };
 
