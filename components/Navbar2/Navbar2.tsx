@@ -45,7 +45,7 @@ icon={<PuzzlePieceIcon className="h-5 w-5" />}
 label="Analytics Measurement"
 url="/analytics-measurement"
 
-/> */}
+/> 
 <NavItem
 icon={<RocketLaunchIcon className="h-5 w-5" />}
 label="SEO Management"
@@ -55,7 +55,7 @@ url="/content-management"
 icon={<CodeBracketSquareIcon className="h-5 w-5" />}
 label="Web Development"
 url="/web-development"
-/>
+/> */}
 <NavItem
 icon={<Square3Stack3DIcon className="h-5 w-5" />}
 label="Blog"
